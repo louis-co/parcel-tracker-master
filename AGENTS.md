@@ -38,3 +38,7 @@ Start here:
 2. `README.md` in this repo for submodule workflow.
 3. Each child repo `README.md` for setup and runtime behavior.
 4. Each child repo `docs/SYSTEM_DEPENDENCIES.md` for integration details.
+
+## Documentation upkeep
+
+If you do work that should be documented, or you discover a method that required significant troubleshooting and should have been documented, add that guidance to the relevant repository `README.md`.
