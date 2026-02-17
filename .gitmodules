@@ -1,0 +1,12 @@
+[submodule "repos/tracker-dashboard"]
+	path = repos/tracker-dashboard
+	url = https://github.com/louis-co/tracker-dashboard.git
+[submodule "repos/parcel-tracker-pi"]
+	path = repos/parcel-tracker-pi
+	url = https://github.com/louis-co/parcel-tracker-pi.git
+[submodule "repos/parcel-tracker-contract"]
+	path = repos/parcel-tracker-contract
+	url = https://github.com/louis-co/parcel-tracker-contract.git
+[submodule "repos/parcel-tracker-convex"]
+	path = repos/parcel-tracker-convex
+	url = https://github.com/louis-co/parcel-tracker-convex.git
