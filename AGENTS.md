@@ -15,3 +15,4 @@
 - Git/submodule workflow: [docs/agents/git-workflow.md](docs/agents/git-workflow.md)
 - Documentation upkeep rules: [docs/agents/documentation-upkeep.md](docs/agents/documentation-upkeep.md)
 - Where to read first: [docs/agents/reading-order.md](docs/agents/reading-order.md)
+- Browser automation setup (`browser-use`): [docs/agents/browser-use.md](docs/agents/browser-use.md)
