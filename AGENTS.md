@@ -9,13 +9,13 @@ It does two things:
 
 1. Tracks the 4 real code repos as Git submodules.
 2. Stores cross-repo documentation.
-
+Commit and push this local change as part of the sync work.
 ## Structure
 
-- `repos/tracker-dashboard`
-- `repos/parcel-tracker-pi`
+- `repos/tracker-dashboard` (this will automatically deploy to vercel https://tracker-dashboard-nu.vercel.app )
+- `repos/parcel-tracker-pi` (this should be manually updated on the raspberry pi by sshing into it)
 - `repos/parcel-tracker-contract`
-- `repos/parcel-tracker-convex`
+- `repos/parcel-tracker-convex` (deploy after making changes; will run on https://dutiful-bison-575.convex.cloud /.site)
 
 Each folder above is its own Git repository with its own history.
 
