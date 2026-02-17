@@ -1,38 +1,40 @@
 # AGENTS.md
 
-Guidance for agents operating in `parcel-tracker-master`.
+Simple guidance for working in `parcel-tracker-master`.
 
-## Purpose
+## Gist of this repo
 
-This repository is a coordination layer for the Parcel Tracker system.
-It tracks four child repositories as Git submodules and stores cross-repo documentation.
+This is the master coordination repo for the Parcel Tracker system.
+It does two things:
 
-## Repository map
+1. Tracks the 4 real code repos as Git submodules.
+2. Stores cross-repo documentation.
+
+## Structure
 
 - `repos/tracker-dashboard`
 - `repos/parcel-tracker-pi`
 - `repos/parcel-tracker-contract`
 - `repos/parcel-tracker-convex`
 
-## Rules of engagement
+Each folder above is its own Git repository with its own history.
 
-1. Treat each submodule as an independent repository with its own release lifecycle.
-2. Never rewrite or reset submodule history from the master repo.
-3. Keep system-level docs (`EXPLAINER.md`, runbooks) updated when cross-repo behavior changes.
-4. When syncing to latest, update submodule pointers intentionally and commit them in master.
-5. Do not store secrets in this repository.
+## Main branch rule
 
-## Recommended update flow
+For this project, all repositories should be pushed to `main` when changes are completed.
 
-1. Update and push changes in child repos first.
-2. In master repo, refresh submodule pointers:
+When a change is made:
+
+1. Commit and push the changed child repo to `origin/main`.
+2. In this master repo, refresh submodule pointers:
 - `git submodule update --init --recursive --remote`
-3. Validate each submodule points at expected commit.
-4. Commit pointer updates with message: `chore(submodules): sync child repos`.
+3. Commit and push the updated pointers from this repo to `origin/main`.
 
-## Documentation requirement
+## Where to get more info
 
-Any change that alters data contract, API shape, or deployment order must be reflected in:
+Start here:
 
-1. `EXPLAINER.md` (system view)
-2. Child repo README/docs where behavior is implemented
+1. `EXPLAINER.md` in this repo for the full system map and codependencies.
+2. `README.md` in this repo for submodule workflow.
+3. Each child repo `README.md` for setup and runtime behavior.
+4. Each child repo `docs/SYSTEM_DEPENDENCIES.md` for integration details.
