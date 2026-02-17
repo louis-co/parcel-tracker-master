@@ -23,6 +23,7 @@ This document explains what each repository does and how they depend on each oth
 - Backend ingest + storage layer.
 - Validates contract compatibility and event semantics.
 - Deduplicates by `eventId`, stores in `raw_events`, updates `tracker_liveness`.
+- Runs beacon ownership resolution with active-conflict-only hourly repair.
 - Serves data to dashboard via Convex public queries.
 
 ## What the contract does (plain English)
@@ -62,6 +63,20 @@ With it:
 5. Convex stores accepted event in `raw_events`.
 6. Convex updates per-tracker snapshot in `tracker_liveness`.
 7. Dashboard queries Convex `.cloud` APIs and renders operator UI.
+
+## Beacon ownership flow (new)
+
+1. Pi emits BLE/RFID scans (`beaconId`, `trackerId`) into ingest.
+2. Convex ingest stores raw scan in `raw_events`.
+3. Ingest marks conflict evidence in `beacon_conflict_state` (lightweight only).
+4. Hourly internal repair processes only active-conflict beacons.
+5. Resolver writes scan-level ownership to `beacon_scan_resolution`.
+6. Resolver writes timeline segments to `beacon_assignment_segments`.
+7. Dashboard Beacon Explorer reads:
+- `beaconOwnership:getCurrentOwner`
+- `beaconOwnership:getAssignmentTimeline`
+- `beaconOwnership:getResolvedPath`
+- `beaconOwnership:listActiveConflicts`
 
 ## Recommended release order for safe changes
 
