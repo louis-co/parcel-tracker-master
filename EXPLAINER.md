@@ -11,7 +11,9 @@ This document explains what each repository does and how they depend on each oth
 
 2. `parcel-tracker-pi`
 - Raspberry Pi runtime running on the device.
-- Collects GNSS/LBS/BLE/RFID signals.
+- Collects GNSS/BLE/RFID signals.
+- Emits GNSS-only location events (`gps_fix` or `gps_no_fix`) with no cell-location fallback.
+- Queues unsent events locally during outages and retries later while preserving tracker-capture timestamp (`trackerTsMs`).
 - Sends normalized event envelopes to Convex ingest endpoint.
 
 3. `parcel-tracker-contract`
@@ -56,7 +58,7 @@ With it:
 
 ## End-to-end event flow
 
-1. Pi creates raw event envelope (`eventId`, `eventType`, `trackerTsMs`, etc.).
+1. Pi creates raw event envelope (`eventId`, `eventType`, `trackerTsMs`, etc.) using tracker-side capture time.
 2. Pi sends `POST /ingest` to Convex `.site` URL.
 3. Convex validates contract version and event-specific rules.
 4. Convex deduplicates retries by `eventId`.
