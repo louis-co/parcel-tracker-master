@@ -8,6 +8,7 @@
 - Commits are essential after code changes:
   - Commit and push changes in each modified child repo.
   - Then update submodules at root and commit/push the updated submodule pointers in this repo.
+  - Do not stop at local commits: always push completed changes to GitHub unless explicitly told not to push.
 - Root-level required sync command after child repo changes:
   - `git submodule update --init --recursive --remote`
 - Final branch target for all repos: `main`.
