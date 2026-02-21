@@ -5,6 +5,9 @@
 ## Essentials
 
 - Package manager: none at root; use each child repo's package manager/tooling.
+- Commits are essential after code changes:
+  - Commit and push changes in each modified child repo.
+  - Then update submodules at root and commit/push the updated submodule pointers in this repo.
 - Root-level required sync command after child repo changes:
   - `git submodule update --init --recursive --remote`
 - Final branch target for all repos: `main`.
