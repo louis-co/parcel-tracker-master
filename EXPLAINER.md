@@ -2,7 +2,7 @@
 
 This document explains what each repository does and how they depend on each other.
 
-## The four repositories
+## The five repositories
 
 1. `tracker-dashboard`
 - Frontend UI (Next.js) used by operators.
@@ -16,12 +16,16 @@ This document explains what each repository does and how they depend on each oth
 - Queues unsent events locally during outages and retries later while preserving tracker-capture timestamp (`trackerTsMs`).
 - Sends normalized event envelopes to Convex ingest endpoint.
 
-3. `parcel-tracker-contract`
+3. `parcel-tracker-beacon`
+- BLE beacon firmware for Seeed Studio XIAO ESP32-C3.
+- Emits manufacturer payloads that the Pi BLE scanner can parse into `ble_scan` events.
+
+4. `parcel-tracker-contract`
 - Shared event schema and contract version policy.
 - Defines required fields and event-specific rules.
 - Prevents drift between Pi producer and Convex backend.
 
-4. `parcel-tracker-convex`
+5. `parcel-tracker-convex`
 - Backend ingest + storage layer.
 - Validates contract compatibility and event semantics.
 - Deduplicates by `eventId`, stores in `raw_events`, updates `tracker_liveness`.
@@ -53,7 +57,10 @@ With it:
 3. Dashboard depends on Convex
 - Dashboard reads Convex query outputs and visualizes data.
 
-4. Dashboard indirectly depends on Pi + Contract
+4. Beacon depends on Pi BLE expectations
+- Beacon manufacturer payload needs to match Pi BLE parsing format (`companyId` + parcel bytes).
+
+5. Dashboard indirectly depends on Pi + Contract
 - Data quality and event semantics originate upstream.
 
 ## End-to-end event flow
@@ -84,11 +91,12 @@ With it:
 
 When contract/data behavior changes:
 
-1. Update `parcel-tracker-contract` (schema + version docs).
-2. Update/deploy `parcel-tracker-convex` (accept new behavior).
-3. Update `parcel-tracker-pi` (emit new behavior).
-4. Validate in `tracker-dashboard`.
-5. Update this master repo submodule pointers.
+1. Update `parcel-tracker-contract` (schema + version docs), if schema semantics changed.
+2. Update `parcel-tracker-beacon`, if BLE payload format/config changed.
+3. Update/deploy `parcel-tracker-convex` (accept new behavior).
+4. Update `parcel-tracker-pi` (emit/parse new behavior).
+5. Validate in `tracker-dashboard`.
+6. Update this master repo submodule pointers.
 
 ## Common mismatch symptoms
 

@@ -10,3 +10,6 @@
 [submodule "repos/parcel-tracker-convex"]
 	path = repos/parcel-tracker-convex
 	url = https://github.com/louis-co/parcel-tracker-convex.git
+[submodule "repos/parcel-tracker-beacon"]
+	path = repos/parcel-tracker-beacon
+	url = https://github.com/louis-co/parcel-tracker-beacon.git

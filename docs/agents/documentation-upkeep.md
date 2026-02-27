@@ -6,6 +6,7 @@ Rules:
 
 1. Update the nearest owner doc first.
 - Pi runtime/service behavior -> `repos/parcel-tracker-pi/README.md` and Pi docs.
+- Beacon firmware behavior/config -> `repos/parcel-tracker-beacon/README.md`.
 - Backend ingest/queries -> `repos/parcel-tracker-convex/README.md` and Convex docs.
 - Contract/schema semantics -> `repos/parcel-tracker-contract/README.md`.
 - Dashboard UI behavior -> `repos/tracker-dashboard/README.md`.
