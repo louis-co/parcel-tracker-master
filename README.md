@@ -54,6 +54,8 @@ When one child repo gets a new commit:
 - `EXPLAINER.md` - plain-English architecture and codependencies.
 - `AGENTS.md` - instructions for agents/automation working in this master repo.
 - `repos/parcel-tracker-pi/README.md` + `repos/parcel-tracker-pi/docs/CRITICAL_SERVICES.md` - Pi runtime behavior and deployment/runbook details.
+- `repos/parcel-tracker-pi/docs/FLEET_BRINGUP_RUNBOOK.md` - consolidated tracker fleet bring-up, recovery, and handoff checklist.
+- `repos/tracker-dashboard/docs/OPERATIONS_UI_BACKLOG.md` - prioritized operator-UX backlog from live screenshot reviews.
 - `repos/parcel-tracker-pi/TODO.md` - latest Pi issue audit and post-fix status tracking.
 
 ## Important note

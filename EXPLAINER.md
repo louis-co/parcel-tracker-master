@@ -101,6 +101,14 @@ When contract/data behavior changes:
 3. Duplicate sends do not create extra rows
 - Expected: backend idempotency gate by `eventId`.
 
+## Operational knowledge sources
+
+1. Detailed Pi fleet operations runbook:
+- `repos/parcel-tracker-pi/docs/FLEET_BRINGUP_RUNBOOK.md`
+
+2. Dashboard operator-UX backlog from live fleet screenshots:
+- `repos/tracker-dashboard/docs/OPERATIONS_UI_BACKLOG.md`
+
 ## Git best-practice summary for this setup
 
 1. Keep each deployable component in its own repository.
