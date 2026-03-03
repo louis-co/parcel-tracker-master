@@ -13,6 +13,17 @@
   - `git submodule update --init --recursive --remote`
 - Final branch target for all repos: `main`.
 
+## Convex Production Deploy (Required)
+
+- Any change in `repos/parcel-tracker-convex` that affects Convex functions, schema, cron jobs, or runtime behavior must be deployed to the Convex production environment before the task is considered complete.
+- Required command from `repos/parcel-tracker-convex`:
+  - `npx convex deploy --yes`
+- Do not leave Convex changes only in dev (`convex dev`) unless explicitly instructed by the user.
+- Standard order for Convex changes:
+  1. Commit and push `repos/parcel-tracker-convex`.
+  2. Deploy to prod with `npx convex deploy --yes`.
+  3. Update submodule pointers in `parcel-tracker-master`, then commit and push.
+
 ## Contract Sync (Required)
 
 - `parcel-tracker-contract` is required. It is the shared schema/version authority between Pi and Convex.
