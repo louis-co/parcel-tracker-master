@@ -1,0 +1,1 @@
+result: SecurityError: Failed to read the 'localStorage' property from 'Window': Access is denied for this document.

@@ -1,0 +1,56 @@
+Tracker dashboard
+Overview
+Route monitor for Convex raw ingest data with incremental syncing, event analytics, and time-window filtering.
+Tracker node
+5:24 PM
+3 March
+[21]<button data-state=open expanded=true />
+	Tracker:
+	Select tracker
+[85]<span />
+	MPH
+[22]<button role=switch aria-checked=true data-state=checked value=on checked=true />
+[88]<span />
+	KM/H
+[23]<button disabled=true />
+	Refresh
+[24]<button disabled=true />
+	Recenter
+[25]<a />
+	Beacon Explorer
+[26]<button data-state=closed expanded=false />
+	Settings
+1/6 trackers online
+Please select a tracker
+Choose a tracker from the selector to load map and telemetry data.
+*[172]<div data-state=open role=dialog id=radix-_r_0_ />
+	*[124]<svg /> <!-- SVG content collapsed -->
+	|SHADOW(open)|*[125]<input placeholder=Search tracker or license plate />
+	|scroll element|<div /> (0.0 pages above, 0.6 pages below)
+		*[161]<button />
+			No tracker selected
+			Load tracker list only
+		*[162]<button />
+			audit-20260303-171240-postfix-tracker
+			offline
+			No license plate assigned
+		*[163]<button />
+			audit-20260303-171240-tracker-a
+			offline
+			No license plate assigned
+		*[164]<button />
+			audit-20260303-171240-tracker-b
+			offline
+			No license plate assigned
+		*[165]<button />
+			pi-5-gateway-01
+			offline
+			Plate SG10301
+		*[166]<button />
+			pi-5-gateway-02
+			offline
+			No license plate assigned
+		*[167]<button />
+			smoke-tracker-01
+			offline
+			No license plate assigned

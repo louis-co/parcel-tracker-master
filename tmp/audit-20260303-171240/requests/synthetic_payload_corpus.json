@@ -1,0 +1,386 @@
+[
+  {
+    "case": "valid_heartbeat",
+    "payload": {
+      "eventId": "audit-20260303-171240-valid-heartbeat-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576059994,
+      "seq": 1,
+      "status": {
+        "locationMode": "no_fix"
+      },
+      "sourcePayload": {
+        "k": "v"
+      }
+    }
+  },
+  {
+    "case": "valid_gps_fix",
+    "payload": {
+      "eventId": "audit-20260303-171240-valid-gps-fix-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "gps_fix",
+      "trackerTsMs": 1772576059995,
+      "seq": 2,
+      "location": {
+        "lat": 40.7128,
+        "lon": -74.006,
+        "method": "gnss",
+        "speedKmh": 42.0,
+        "hdop": 1.1
+      }
+    }
+  },
+  {
+    "case": "valid_gps_no_fix",
+    "payload": {
+      "eventId": "audit-20260303-171240-valid-gps-no-fix-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "gps_no_fix",
+      "trackerTsMs": 1772576059996,
+      "seq": 3,
+      "sourcePayload": {
+        "reason": "test_no_fix"
+      }
+    }
+  },
+  {
+    "case": "valid_gps_cell_fallback",
+    "payload": {
+      "eventId": "audit-20260303-171240-valid-gps-cell-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "gps_cell_fallback",
+      "trackerTsMs": 1772576059997,
+      "seq": 4,
+      "location": {
+        "lat": 40.7138,
+        "lon": -74.016,
+        "method": "cell_lbs_native",
+        "accuracyM": 500,
+        "source": "sim7670_clbs"
+      }
+    }
+  },
+  {
+    "case": "valid_ble_scan",
+    "payload": {
+      "eventId": "audit-20260303-171240-valid-ble-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "ble_scan",
+      "trackerTsMs": 1772576059998,
+      "seq": 5,
+      "beaconId": "ble:audit-20260303-171240:1001",
+      "signal": {
+        "rssi": -60
+      },
+      "sourcePayload": {
+        "companyId": 65535,
+        "parcelId": 1001
+      }
+    }
+  },
+  {
+    "case": "valid_rfid_scan",
+    "payload": {
+      "eventId": "audit-20260303-171240-valid-rfid-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "rfid_scan",
+      "trackerTsMs": 1772576059999,
+      "seq": 6,
+      "beaconId": "rfid:audit-20260303-171240:ABCDEF123456",
+      "sourcePayload": {
+        "epc": "ABCDEF123456"
+      }
+    }
+  },
+  {
+    "case": "invalid_malformed_json",
+    "payload": "{not-json"
+  },
+  {
+    "case": "invalid_missing_required",
+    "payload": {
+      "eventId": "audit-20260303-171240-invalid-missing-1",
+      "eventType": "heartbeat",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "trackerTsMs": 1772576060004,
+      "seq": 10
+    }
+  },
+  {
+    "case": "invalid_semver",
+    "payload": {
+      "eventId": "audit-20260303-171240-invalid-semver-1",
+      "contractVersion": "1.x.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060005,
+      "seq": 11
+    }
+  },
+  {
+    "case": "invalid_event_type",
+    "payload": {
+      "eventId": "audit-20260303-171240-invalid-eventtype-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "foo",
+      "trackerTsMs": 1772576060006,
+      "seq": 12
+    }
+  },
+  {
+    "case": "invalid_gps_fix_wrong_method",
+    "payload": {
+      "eventId": "audit-20260303-171240-invalid-gps-fix-method-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "gps_fix",
+      "trackerTsMs": 1772576060007,
+      "seq": 13,
+      "location": {
+        "lat": 40.0,
+        "lon": -74.0,
+        "method": "cell_lbs_native"
+      }
+    }
+  },
+  {
+    "case": "invalid_gps_cell_missing_accuracy",
+    "payload": {
+      "eventId": "audit-20260303-171240-invalid-gps-cell-acc-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "gps_cell_fallback",
+      "trackerTsMs": 1772576060008,
+      "seq": 14,
+      "location": {
+        "lat": 40.0,
+        "lon": -74.0,
+        "method": "cell_lbs_native",
+        "source": "sim7670_clbs"
+      }
+    }
+  },
+  {
+    "case": "invalid_gps_cell_wrong_source",
+    "payload": {
+      "eventId": "audit-20260303-171240-invalid-gps-cell-source-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "gps_cell_fallback",
+      "trackerTsMs": 1772576060009,
+      "seq": 15,
+      "location": {
+        "lat": 40.0,
+        "lon": -74.0,
+        "method": "cell_lbs_native",
+        "accuracyM": 100,
+        "source": "wrong"
+      }
+    }
+  },
+  {
+    "case": "invalid_ble_missing_beacon",
+    "payload": {
+      "eventId": "audit-20260303-171240-invalid-ble-no-beacon-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "ble_scan",
+      "trackerTsMs": 1772576060010,
+      "seq": 16
+    }
+  },
+  {
+    "case": "invalid_out_of_range_lat",
+    "payload": {
+      "eventId": "audit-20260303-171240-invalid-lat-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "gps_fix",
+      "trackerTsMs": 1772576060011,
+      "seq": 17,
+      "location": {
+        "lat": 190.0,
+        "lon": -74.0,
+        "method": "gnss"
+      }
+    }
+  },
+  {
+    "case": "invalid_extra_location_field",
+    "payload": {
+      "eventId": "audit-20260303-171240-invalid-extra-location-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "gps_fix",
+      "trackerTsMs": 1772576060012,
+      "seq": 18,
+      "location": {
+        "lat": 40.0,
+        "lon": -74.0,
+        "method": "gnss",
+        "foo": "bar"
+      }
+    }
+  },
+  {
+    "case": "schema_probe_sourcePayload_scalar",
+    "payload": {
+      "eventId": "audit-20260303-171240-schema-probe-sourcePayload-scalar",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060013,
+      "seq": 19,
+      "sourcePayload": "not-an-object"
+    }
+  },
+  {
+    "case": "idempotency_sequential_1",
+    "payload": {
+      "eventId": "audit-20260303-171240-idempotency-seq-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060014,
+      "seq": 20
+    }
+  },
+  {
+    "case": "idempotency_sequential_2",
+    "payload": {
+      "eventId": "audit-20260303-171240-idempotency-seq-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060014,
+      "seq": 20
+    }
+  },
+  {
+    "case": "idempotency_concurrent_0",
+    "payload": {
+      "eventId": "audit-20260303-171240-idempotency-concurrent-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060015,
+      "seq": 21
+    }
+  },
+  {
+    "case": "same_payload_different_event_id_0",
+    "payload": {
+      "eventId": "audit-20260303-171240-same-body-different-id-0",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060024,
+      "seq": 30,
+      "status": {
+        "locationMode": "no_fix"
+      }
+    }
+  },
+  {
+    "case": "same_payload_different_event_id_1",
+    "payload": {
+      "eventId": "audit-20260303-171240-same-body-different-id-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060025,
+      "seq": 31,
+      "status": {
+        "locationMode": "no_fix"
+      }
+    }
+  },
+  {
+    "case": "same_payload_different_event_id_2",
+    "payload": {
+      "eventId": "audit-20260303-171240-same-body-different-id-2",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-a",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060026,
+      "seq": 32,
+      "status": {
+        "locationMode": "no_fix"
+      }
+    }
+  },
+  {
+    "case": "timing_old_trackerTs",
+    "payload": {
+      "eventId": "audit-20260303-171240-timing-old-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-b",
+      "eventType": "gps_fix",
+      "trackerTsMs": 1772316859994,
+      "seq": 1,
+      "location": {
+        "lat": 41.0,
+        "lon": -73.0,
+        "method": "gnss"
+      }
+    }
+  },
+  {
+    "case": "timing_future_trackerTs",
+    "payload": {
+      "eventId": "audit-20260303-171240-timing-future-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-b",
+      "eventType": "gps_fix",
+      "trackerTsMs": 1772748859994,
+      "seq": 2,
+      "location": {
+        "lat": 41.1,
+        "lon": -73.1,
+        "method": "gnss"
+      }
+    }
+  },
+  {
+    "case": "ordering_non_monotonic_seq_high",
+    "payload": {
+      "eventId": "audit-20260303-171240-seq-high-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-b",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060034,
+      "seq": 999999
+    }
+  },
+  {
+    "case": "ordering_non_monotonic_seq_low",
+    "payload": {
+      "eventId": "audit-20260303-171240-seq-low-1",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-b",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772576060035,
+      "seq": 3
+    }
+  },
+  {
+    "case": "replay_batch_0",
+    "payload": {
+      "eventId": "audit-20260303-171240-replay-0",
+      "contractVersion": "1.0.0",
+      "trackerId": "audit-20260303-171240-tracker-b",
+      "eventType": "heartbeat",
+      "trackerTsMs": 1772316859994,
+      "seq": 1000
+    }
+  }
+]

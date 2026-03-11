@@ -1,0 +1,9 @@
+[1/4] contract endpoint
+contract/version: status=200 body={"contractVersion":"1.0.0","minCompatibleMajor":1}
+[2/4] ingest first event
+ingest#1: status=200 body={"duplicate":false,"ok":true,"rawEventId":"jh7fnp44wq64000nk3r7gnzftd827jmf"}
+[3/4] ingest duplicate eventId
+ingest#2: status=200 body={"duplicate":true,"ok":true,"rawEventId":"jh7fnp44wq64000nk3r7gnzftd827jmf"}
+[4/4] invalid payload check
+ingest_invalid: status=400 body={"ok":false,"error":"ArgumentValidationError: Object is missing the required field `contractVersion`. Consider wrapping the field validator in `v.optional(...)` if this is expected.\n\nObject: {}\nValidator: v.object({beaconId: v.optional(v.string()), contractVersion: v.string(), eventId: v.string(), eventType: v.union(v.literal(\"heartbeat\"), v.literal(\"gps_fix\"), v.literal(\"gps_no_fix\"), v.literal(\"gps_cell_fallback\"), v.literal(\"ble_scan\"), v.literal(\"rfid_scan\")), location: v.optional(v.object({accuracyM: v.optional(v.float64()), altM: v.optional(v.float64()), hdop: v.optional(v.float64()), lat: v.float64(), lon: v.float64(), method: v.union(v.literal(\"gnss\"), v.literal(\"cell_lbs_native\")), source: v.optional(v.string()), speedKmh: v.optional(v.float64())})), seq: v.float64(), signal: v.optional(v.object({rssi: v.optional(v.float64())})), sourcePayload: v.optional(v.any()), status: v.optional(v.object({locationMode: v.optional(v.union(v.literal(\"gnss_fix\"), v.literal(\"cell_fallback\"), v.literal(\"no_fix\")))})), trackerId: v.string(), trackerTsMs: v.float64()})\n\n"}
+PASS: Convex ingest smoke test completed

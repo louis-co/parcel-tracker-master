@@ -1,0 +1,92 @@
+{
+  "event_lookup": {
+    "audit-20260303-171240-valid-heartbeat-1": {
+      "status": 200,
+      "has_value": true
+    },
+    "audit-20260303-171240-valid-gps-fix-1": {
+      "status": 200,
+      "has_value": true
+    },
+    "audit-20260303-171240-idempotency-seq-1": {
+      "status": 200,
+      "has_value": true
+    },
+    "audit-20260303-171240-idempotency-concurrent-1": {
+      "status": 200,
+      "has_value": true
+    }
+  },
+  "history_audit-20260303-171240-tracker-a": {
+    "status": 200,
+    "count": 13,
+    "latest_eventType": "heartbeat"
+  },
+  "history_audit-20260303-171240-tracker-b": {
+    "status": 200,
+    "count": 24,
+    "latest_eventType": "gps_fix"
+  },
+  "dashboard_mode_all": {
+    "status": 200,
+    "count": 13,
+    "heartbeat_like_count": 8
+  },
+  "dashboard_mode_latest": {
+    "status": 200,
+    "count": 6,
+    "heartbeat_like_count": 1
+  },
+  "dashboard_mode_none": {
+    "status": 200,
+    "count": 5,
+    "heartbeat_like_count": 0
+  },
+  "dashboard_reversed_range": {
+    "status": 200,
+    "body": {
+      "status": "error",
+      "errorMessage": "[Request ID: fb6752057292cd9c] Server Error"
+    }
+  },
+  "recent_events_since_30m": {
+    "status": 200,
+    "count": 38
+  },
+  "liveness_audit-20260303-171240-tracker-a": {
+    "status": 200,
+    "count": 1,
+    "lastEventType": "heartbeat"
+  },
+  "liveness_audit-20260303-171240-tracker-b": {
+    "status": 200,
+    "count": 1,
+    "lastEventType": "heartbeat"
+  },
+  "beacon_ble:audit-20260303-171240:1001": {
+    "owner_status": 200,
+    "owner_state": "assigned",
+    "timeline_status": 200,
+    "timeline_count": 0,
+    "path_status": 200,
+    "path_count": 3
+  },
+  "beacon_rfid:audit-20260303-171240:ABCDEF123456": {
+    "owner_status": 200,
+    "owner_state": "assigned",
+    "timeline_status": 200,
+    "timeline_count": 0,
+    "path_status": 200,
+    "path_count": 3
+  },
+  "active_conflicts": {
+    "status": 200,
+    "count": 0
+  },
+  "idempotency_expected": {
+    "sequential_eventId": "audit-20260303-171240-idempotency-seq-1",
+    "concurrent_eventId": "audit-20260303-171240-idempotency-concurrent-1",
+    "concurrency_duplicate_false_count_from_phase2": 1,
+    "concurrency_duplicate_true_count_from_phase2": 29
+  }
+}

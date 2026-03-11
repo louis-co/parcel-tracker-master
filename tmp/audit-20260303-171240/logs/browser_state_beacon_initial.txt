@@ -1,0 +1,58 @@
+Beacon explorer
+Beacons
+Resolve ownership, attach tracking numbers, and inspect live parcel routes with heartbeat-aware state.
+*[2230]<a />
+	Open tracker dashboard
+Beacon Explorer
+Beacon id
+|SHADOW(open)|*[2236]<input id=beacon-explorer-id placeholder=ble:2164195606 />
+Tracking number
+|SHADOW(open)|*[2238]<input id=beacon-explorer-tracking placeholder=1Z999AA10123456784 />
+Soft-prior tracker
+|SHADOW(open)|*[2240]<input id=beacon-explorer-prior placeholder=pi-5-gateway-01 />
+Bias score (0..1)
+|SHADOW(open)|*[2244]<input id=beacon-explorer-bias placeholder=0.35 value=0.35 />
+Note (optional)
+|SHADOW(open)|*[2246]<input id=beacon-explorer-note placeholder=Loaded on truck A />
+*[2252]<button />
+	Load beacon
+*[2253]<button />
+	Assign tracking
+*[2254]<button />
+	Clear tracking
+*[2255]<button />
+	Assign prior
+*[2256]<button />
+	Clear prior
+Viewing:
+selected beacon
+Tracking number
+Not assigned
+Current owner
+Ambiguous / unknown
+Live parcel state
+*[2265]<span />
+Off truck
+Missed heartbeats
+Conflict status
+Stable
+Last seen
+n/a
+Resolver state
+n/a
+%)
+Missing since:
+n/a
+Live location
+No live location
+No resolved path points yet for
+selected beacon
+Route sessions •
+selected beacon
+sessions
+No route sessions loaded.
+Assignment timeline •
+selected beacon
+segments
+No ownership timeline loaded for
+selected beacon

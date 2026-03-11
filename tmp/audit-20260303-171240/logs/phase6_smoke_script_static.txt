@@ -1,0 +1,14 @@
+== smoke_test_no_rfid static checks ==
+5:EXPECT_BLE_EVENTS="${EXPECT_BLE_EVENTS:-1}"
+6:MIN_LOCATION_SENDS="${MIN_LOCATION_SENDS:-8}"
+8:MAX_CELL_FALLBACK_EVENTS="${MAX_CELL_FALLBACK_EVENTS:-0}"
+16:  active="$(systemctl is-active "${svc}" 2>/dev/null || true)"
+17:  enabled="$(systemctl is-enabled "${svc}" 2>/dev/null || true)"
+30:rfid_enabled="$(systemctl is-enabled rfid_uplink.service 2>/dev/null || true)"
+33:  rfid_active="$(systemctl is-active rfid_uplink.service 2>/dev/null || true)"
+83:location_sent="$(journalctl -u location_uplink.service --since "-${LOOKBACK_MIN} min" --no-pager | grep -c 'sent eventId' || true)"
+84:[[ "$location_sent" -ge "$MIN_LOCATION_SENDS" ]] || fail "location_uplink low event volume (${location_sent} < ${MIN_LOCATION_SENDS})"
+87:if [[ "$EXPECT_BLE_EVENTS" == "1" ]]; then
+88:  ble_sent="$(journalctl -u ble_receiver.service --since "-${LOOKBACK_MIN} min" --no-pager | grep -c 'sent beaconId' || true)"
+92:  echo "INFO: BLE event count check skipped (EXPECT_BLE_EVENTS=${EXPECT_BLE_EVENTS})"
+108:[[ "$cell_fallback_queued" -le "$MAX_CELL_FALLBACK_EVENTS" ]] || fail "unexpected queued cell fallback events (${cell_fallback_queued} > ${MAX_CELL_FALLBACK_EVENTS})"

@@ -1,0 +1,116 @@
+[
+  {
+    "theme": "dark",
+    "page": "trackers",
+    "screenshot": "/Users/louishollinger/Documents/PROGRAMMING/parcel-tracker-master/tmp/palette-regression/trackers-dark.png",
+    "computed": {
+      "accent": "#b9d8be",
+      "warning": "#f4c95d",
+      "danger": "#ef7a7a",
+      "statusLiveBg": "color-mix(in srgb,#b9d8be/**/14%,transparent)",
+      "statusInfoBg": "color-mix(in srgb,#b9d8be/**/10%,transparent)",
+      "statusWarningBg": "color-mix(in srgb,#f4c95d/**/14%,transparent)",
+      "statusErrorBg": "color-mix(in srgb,#ef7a7a/**/16%,transparent)",
+      "activeNavColor": "rgb(185, 216, 190)",
+      "activeNavBorder": "color(srgb 0.72549 0.847059 0.745098 / 0.52)",
+      "liveColor": "color(srgb 0.769412 0.871529 0.785882)",
+      "liveBg": "color(srgb 0.72549 0.847059 0.745098 / 0.14)",
+      "liveBorder": "color(srgb 0.72549 0.847059 0.745098 / 0.58)"
+    }
+  },
+  {
+    "theme": "dark",
+    "page": "beacons",
+    "screenshot": "/Users/louishollinger/Documents/PROGRAMMING/parcel-tracker-master/tmp/palette-regression/beacons-dark.png",
+    "computed": {
+      "accent": "",
+      "warning": "",
+      "danger": "",
+      "statusLiveBg": "",
+      "statusInfoBg": "",
+      "statusWarningBg": "",
+      "statusErrorBg": "",
+      "activeNavColor": null,
+      "activeNavBorder": null,
+      "liveColor": "rgb(0, 0, 0)",
+      "liveBg": "rgba(0, 0, 0, 0)",
+      "liveBorder": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "theme": "dark",
+    "page": "parcels",
+    "screenshot": "/Users/louishollinger/Documents/PROGRAMMING/parcel-tracker-master/tmp/palette-regression/parcels-dark.png",
+    "computed": {
+      "accent": "#b9d8be",
+      "warning": "#f4c95d",
+      "danger": "#ef7a7a",
+      "statusLiveBg": "color-mix(in srgb,#b9d8be/**/14%,transparent)",
+      "statusInfoBg": "color-mix(in srgb,#b9d8be/**/10%,transparent)",
+      "statusWarningBg": "color-mix(in srgb,#f4c95d/**/14%,transparent)",
+      "statusErrorBg": "color-mix(in srgb,#ef7a7a/**/16%,transparent)",
+      "activeNavColor": "rgb(185, 216, 190)",
+      "activeNavBorder": "color(srgb 0.72549 0.847059 0.745098 / 0.52)",
+      "liveColor": "color(srgb 0.769412 0.871529 0.785882)",
+      "liveBg": "color(srgb 0.72549 0.847059 0.745098 / 0.14)",
+      "liveBorder": "color(srgb 0.72549 0.847059 0.745098 / 0.58)"
+    }
+  },
+  {
+    "theme": "light",
+    "page": "trackers",
+    "screenshot": "/Users/louishollinger/Documents/PROGRAMMING/parcel-tracker-master/tmp/palette-regression/trackers-light.png",
+    "computed": {
+      "accent": "#486f57",
+      "warning": "#b87a11",
+      "danger": "#b65151",
+      "statusLiveBg": "color-mix(in srgb,#486f57/**/14%,transparent)",
+      "statusInfoBg": "color-mix(in srgb,#486f57/**/11%,transparent)",
+      "statusWarningBg": "color-mix(in srgb,#b87a11/**/16%,transparent)",
+      "statusErrorBg": "color-mix(in srgb,#b65151/**/14%,transparent)",
+      "activeNavColor": "rgb(72, 111, 87)",
+      "activeNavBorder": "color(srgb 0.282353 0.435294 0.341177 / 0.52)",
+      "liveColor": "color(srgb 0.259765 0.400471 0.313882)",
+      "liveBg": "color(srgb 0.282353 0.435294 0.341176 / 0.14)",
+      "liveBorder": "color(srgb 0.282353 0.435294 0.341176 / 0.46)"
+    }
+  },
+  {
+    "theme": "light",
+    "page": "beacons",
+    "screenshot": "/Users/louishollinger/Documents/PROGRAMMING/parcel-tracker-master/tmp/palette-regression/beacons-light.png",
+    "computed": {
+      "accent": "",
+      "warning": "",
+      "danger": "",
+      "statusLiveBg": "",
+      "statusInfoBg": "",
+      "statusWarningBg": "",
+      "statusErrorBg": "",
+      "activeNavColor": null,
+      "activeNavBorder": null,
+      "liveColor": "rgb(0, 0, 0)",
+      "liveBg": "rgba(0, 0, 0, 0)",
+      "liveBorder": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "theme": "light",
+    "page": "parcels",
+    "screenshot": "/Users/louishollinger/Documents/PROGRAMMING/parcel-tracker-master/tmp/palette-regression/parcels-light.png",
+    "computed": {
+      "accent": "#486f57",
+      "warning": "#b87a11",
+      "danger": "#b65151",
+      "statusLiveBg": "color-mix(in srgb,#486f57/**/14%,transparent)",
+      "statusInfoBg": "color-mix(in srgb,#486f57/**/11%,transparent)",
+      "statusWarningBg": "color-mix(in srgb,#b87a11/**/16%,transparent)",
+      "statusErrorBg": "color-mix(in srgb,#b65151/**/14%,transparent)",
+      "activeNavColor": "rgb(72, 111, 87)",
+      "activeNavBorder": "color(srgb 0.282353 0.435294 0.341177 / 0.52)",
+      "liveColor": "color(srgb 0.259765 0.400471 0.313882)",
+      "liveBg": "color(srgb 0.282353 0.435294 0.341176 / 0.14)",
+      "liveBorder": "color(srgb 0.282353 0.435294 0.341176 / 0.46)"
+    }
+  }
+]

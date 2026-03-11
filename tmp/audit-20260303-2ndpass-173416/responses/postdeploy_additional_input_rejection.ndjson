@@ -1,0 +1,3 @@
+{"case":"injection_beaconTracking_beaconId","status":"error","errorMessage":"[Request ID: abe373a7d64865f1] Server Error","message":null}
+{"case":"injection_beaconOwnership_trackerId","status":"error","errorMessage":"[Request ID: 5c8fb270bae5627b] Server Error","message":null}
+{"case":"injection_getCurrentOwner_beaconId","status":"error","errorMessage":"[Request ID: fd1b375e00d6cd5f] Server Error","message":null}

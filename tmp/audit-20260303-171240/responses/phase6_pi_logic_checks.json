@@ -1,0 +1,41 @@
+{
+  "parse_cgpsinfo": {
+    "parsed": {
+      "lat": 40.710233333333335,
+      "lon": -74.006,
+      "altM": 12.3,
+      "speedKmh": 4.5,
+      "method": "gnss"
+    },
+    "raw": "+CGPSINFO: 4042.6140,N,07400.3600,W,030326,171200.0,12.3,4.5,1"
+  },
+  "parse_cgnssinfo": {
+    "parsed": {
+      "lat": 40.71,
+      "lon": -74.0,
+      "altM": 18.1,
+      "speedKmh": 5.5,
+      "hdop": 0.9,
+      "method": "gnss"
+    },
+    "raw": "+CGNSSINFO: ,,,,,40.7100,N,74.0000,W,030326,171200.0,18.1,5.5,0.9"
+  },
+  "outbox_eventid_dedupe_count": 1,
+  "retry_backoff_ms": [
+    1000,
+    2000,
+    4000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    256000
+  ],
+  "ble_parse_valid": 1001,
+  "ble_parse_short": null,
+  "ble_parse_wrong_company": null,
+  "rfid_extract_epc": "E2112233445566778899AABB",
+  "rfid_extract_none": null
+}

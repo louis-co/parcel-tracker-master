@@ -1,0 +1,134 @@
+== sync_contract_version --check ==
+checked: repos/parcel-tracker-contract/README.md
+checked: repos/parcel-tracker-contract/examples/raw_event.heartbeat.json
+checked: repos/parcel-tracker-contract/examples/raw_event.ble_scan.json
+checked: repos/parcel-tracker-contract/examples/raw_event.gps_cell_fallback.json
+checked: repos/parcel-tracker-convex/convex/ingest.ts
+checked: repos/parcel-tracker-convex/convex/ingest.ts
+checked: repos/parcel-tracker-convex/scripts/smoke_ingest.sh
+checked: repos/parcel-tracker-pi/runtime/location_uplink.py
+checked: repos/parcel-tracker-pi/runtime/ble_uplink.py
+checked: repos/parcel-tracker-pi/runtime/rfid_uplink.py
+checked: repos/parcel-tracker-pi/runtime/location_uplink.service
+checked: repos/parcel-tracker-pi/runtime/ble_receiver.service
+checked: repos/parcel-tracker-pi/runtime/rfid_uplink.service
+checked: repos/parcel-tracker-pi/runtime/config/location.env.example
+checked: repos/parcel-tracker-pi/runtime/config/ble.env.example
+checked: repos/parcel-tracker-pi/runtime/config/rfid.env.example
+Contract version sync check passed for 1.0.0 (major 1).
+
+== Contract/event semantics cross-check ==
+-- contract version --
+1.0.0
+-- ingest constants --
+5:export const CURRENT_CONTRACT_VERSION = "1.0.0";
+6:export const MIN_COMPATIBLE_MAJOR = 1;
+22:const eventTypeValidator = v.union(
+31:const locationModeValidator = v.union(
+61:  if (major !== MIN_COMPATIBLE_MAJOR) {
+63:      `Incompatible contractVersion '${contractVersion}'. Expected major ${MIN_COMPATIBLE_MAJOR}.`,
+130:    eventType: eventTypeValidator,
+142:        locationMode: v.optional(locationModeValidator),
+-- schema event enum + conditional rules --
+22:    "eventType": {
+26:        "gps_fix",
+28:        "gps_cell_fallback",
+29:        "ble_scan",
+30:        "rfid_scan"
+105:        "locationMode": {
+124:    "eventType",
+132:          "eventType": {
+133:            "const": "gps_fix"
+137:          "eventType"
+163:          "eventType": {
+164:            "const": "gps_cell_fallback"
+168:          "eventType"
+199:          "eventType": {
+201:              "ble_scan",
+202:              "rfid_scan"
+207:          "eventType"
+
+== Pi env/service contract alignment ==
+repos/parcel-tracker-pi/runtime/config/ble.env.example:1:INGEST_URL=https://dutiful-bison-575.convex.site/ingest
+repos/parcel-tracker-pi/runtime/config/ble.env.example:2:TRACKER_ID=pi-5-gateway-01
+repos/parcel-tracker-pi/runtime/config/ble.env.example:3:CONTRACT_VERSION=1.0.0
+repos/parcel-tracker-pi/runtime/ble_receiver.service:13:Environment=INGEST_URL=https://dutiful-bison-575.convex.site/ingest
+repos/parcel-tracker-pi/runtime/ble_receiver.service:14:Environment=TRACKER_ID=pi-5-gateway-01
+repos/parcel-tracker-pi/runtime/ble_receiver.service:15:Environment=CONTRACT_VERSION=1.0.0
+repos/parcel-tracker-pi/runtime/config/location.env.example:2:INGEST_URL=https://YOUR-DEPLOYMENT.convex.site/ingest
+repos/parcel-tracker-pi/runtime/config/location.env.example:5:TRACKER_ID=pi-001
+repos/parcel-tracker-pi/runtime/config/location.env.example:6:CONTRACT_VERSION=1.0.0
+repos/parcel-tracker-pi/runtime/rfid_uplink.service:19:Environment=INGEST_URL=https://dutiful-bison-575.convex.site/ingest
+repos/parcel-tracker-pi/runtime/rfid_uplink.service:20:Environment=TRACKER_ID=pi-5-gateway-01
+repos/parcel-tracker-pi/runtime/rfid_uplink.service:21:Environment=CONTRACT_VERSION=1.0.0
+repos/parcel-tracker-pi/runtime/location_uplink.py:43:CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "1.0.0")
+repos/parcel-tracker-pi/runtime/location_uplink.py:44:INGEST_URL = os.environ.get("INGEST_URL", "")
+repos/parcel-tracker-pi/runtime/location_uplink.py:45:_ingest_parsed = urlparse(INGEST_URL)
+repos/parcel-tracker-pi/runtime/location_uplink.py:52:TRACKER_ID = os.environ.get("TRACKER_ID", os.environ.get("DEVICE_ID", "pi-001"))
+repos/parcel-tracker-pi/runtime/location_uplink.py:334:        "contractVersion": CONTRACT_VERSION,
+repos/parcel-tracker-pi/runtime/location_uplink.py:335:        "trackerId": TRACKER_ID,
+repos/parcel-tracker-pi/runtime/location_uplink.py:587:    if not INGEST_URL:
+repos/parcel-tracker-pi/runtime/location_uplink.py:588:        raise SystemExit("INGEST_URL is required")
+repos/parcel-tracker-pi/runtime/location_uplink.py:590:        raise SystemExit("INGEST_URL must use http:// or https://")
+repos/parcel-tracker-pi/runtime/location_uplink.py:592:        raise SystemExit("INGEST_URL host is invalid")
+repos/parcel-tracker-pi/runtime/ble_uplink.py:26:INGEST_URL = os.environ.get("INGEST_URL", os.environ.get("BLE_INGEST_URL", ""))
+repos/parcel-tracker-pi/runtime/ble_uplink.py:27:TRACKER_ID = os.environ.get("TRACKER_ID", os.environ.get("BLE_DEVICE_ID", "pi-5-gateway-01"))
+repos/parcel-tracker-pi/runtime/ble_uplink.py:28:CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "1.0.0")
+repos/parcel-tracker-pi/runtime/ble_uplink.py:73:    req = urlrequest.Request(INGEST_URL, data=data, headers=headers, method="POST")
+repos/parcel-tracker-pi/runtime/ble_uplink.py:84:    if not INGEST_URL:
+repos/parcel-tracker-pi/runtime/ble_uplink.py:85:        raise SystemExit("INGEST_URL (or BLE_INGEST_URL) is required")
+repos/parcel-tracker-pi/runtime/ble_uplink.py:123:            "contractVersion": CONTRACT_VERSION,
+repos/parcel-tracker-pi/runtime/ble_uplink.py:124:            "trackerId": TRACKER_ID,
+repos/parcel-tracker-pi/runtime/location_uplink.service:15:Environment=INGEST_URL=https://YOUR-DEPLOYMENT.convex.site/ingest
+repos/parcel-tracker-pi/runtime/location_uplink.service:16:Environment=TRACKER_ID=pi-001
+repos/parcel-tracker-pi/runtime/location_uplink.service:17:Environment=CONTRACT_VERSION=1.0.0
+repos/parcel-tracker-pi/runtime/config/rfid.env.example:1:INGEST_URL=https://dutiful-bison-575.convex.site/ingest
+repos/parcel-tracker-pi/runtime/config/rfid.env.example:2:TRACKER_ID=pi-5-gateway-01
+repos/parcel-tracker-pi/runtime/config/rfid.env.example:3:CONTRACT_VERSION=1.0.0
+repos/parcel-tracker-pi/runtime/rfid_uplink.py:23:INGEST_URL = os.environ.get("INGEST_URL", os.environ.get("RFID_INGEST_URL", ""))
+repos/parcel-tracker-pi/runtime/rfid_uplink.py:24:TRACKER_ID = os.environ.get("TRACKER_ID", os.environ.get("RFID_DEVICE_ID", "pi-5-gateway-01"))
+repos/parcel-tracker-pi/runtime/rfid_uplink.py:25:CONTRACT_VERSION = os.environ.get("CONTRACT_VERSION", "1.0.0")
+repos/parcel-tracker-pi/runtime/rfid_uplink.py:71:    req = urlrequest.Request(INGEST_URL, data=data, headers=headers, method="POST")
+repos/parcel-tracker-pi/runtime/rfid_uplink.py:82:    if not INGEST_URL:
+repos/parcel-tracker-pi/runtime/rfid_uplink.py:83:        raise SystemExit("INGEST_URL (or RFID_INGEST_URL) is required")
+repos/parcel-tracker-pi/runtime/rfid_uplink.py:124:                "contractVersion": CONTRACT_VERSION,
+repos/parcel-tracker-pi/runtime/rfid_uplink.py:125:                "trackerId": TRACKER_ID,
+
+== Dashboard parser + query assumptions ==
+repos/parcel-tracker-convex/convex/queries.ts:184:        name: "queries:getDashboardEvents",
+repos/parcel-tracker-convex/convex/queries.ts:189:          sinceTrackerTsMs: "number (optional)",
+repos/parcel-tracker-convex/convex/queries.ts:192:          sinceIngestTsMs: "number (optional)",
+repos/parcel-tracker-convex/convex/queries.ts:218:          sinceIngestTsMs: "number (optional)",
+repos/parcel-tracker-convex/convex/queries.ts:358:export const getDashboardEvents = query({
+repos/parcel-tracker-convex/convex/queries.ts:363:    sinceTrackerTsMs: v.optional(v.number()),
+repos/parcel-tracker-convex/convex/queries.ts:366:    sinceIngestTsMs: v.optional(v.number()),
+repos/parcel-tracker-convex/convex/queries.ts:379:      typeof args.startTrackerTsMs === "number" && typeof args.sinceTrackerTsMs === "number"
+repos/parcel-tracker-convex/convex/queries.ts:380:        ? Math.max(args.startTrackerTsMs, args.sinceTrackerTsMs)
+repos/parcel-tracker-convex/convex/queries.ts:383:          : args.sinceTrackerTsMs;
+repos/parcel-tracker-convex/convex/queries.ts:385:      typeof args.startIngestTsMs === "number" && typeof args.sinceIngestTsMs === "number"
+repos/parcel-tracker-convex/convex/queries.ts:386:        ? Math.max(args.startIngestTsMs, args.sinceIngestTsMs)
+repos/parcel-tracker-convex/convex/queries.ts:389:          : args.sinceIngestTsMs;
+repos/parcel-tracker-convex/convex/queries.ts:477:    sinceIngestTsMs: v.optional(v.number()),
+repos/parcel-tracker-convex/convex/queries.ts:485:        if (typeof args.sinceIngestTsMs === "number") {
+repos/parcel-tracker-convex/convex/queries.ts:486:          return q.gte("ingestTsMs", args.sinceIngestTsMs);
+repos/tracker-dashboard/src/lib/tracker.ts:342:export function normalizeRawEvents(payload: unknown): TrackerRawEvent[] {
+repos/tracker-dashboard/src/lib/tracker.ts:407:export function rawEventsToTrackerPoints(events: TrackerRawEvent[]): TrackerPoint[] {
+repos/tracker-dashboard/src/lib/tracker.ts:450:export function normalizeLiveness(payload: unknown): TrackerLivenessSnapshot[] {
+repos/tracker-dashboard/src/lib/tracker.ts:591:export function parseTrackerSourcePayload(payload: unknown): TrackerSourceModel {
+repos/tracker-dashboard/src/lib/tracker.ts:592:  const events = normalizeRawEvents(payload);
+repos/tracker-dashboard/src/lib/tracker.ts:593:  const liveness = normalizeLiveness(payload);
+repos/tracker-dashboard/src/lib/tracker.ts:600:      points: rawEventsToTrackerPoints(events),
+repos/tracker-dashboard/src/lib/tracker.ts:618:  return parseTrackerSourcePayload(payload).points;
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:58:  parseTrackerSourcePayload,
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:59:  rawEventsToTrackerPoints,
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:75:const BEAUTIFUL_BISON_RECOMMENDED_PATH = "queries:getDashboardEvents";
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:77:const BEAUTIFUL_BISON_ALL_EVENTS_PATH = "queries:getDashboardEvents";
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:531:  const isDashboardEventsPath = path.includes("getDashboardEvents");
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:539:      path.includes("getDashboardEvents");
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:582:    if (typeof effectiveSinceIngestTs === "number") next.sinceIngestTsMs = effectiveSinceIngestTs;
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:583:    delete next.sinceTrackerTsMs;
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:588:  if (typeof effectiveSinceIngestTs === "number" && ("sinceIngestTsMs" in next || path.includes("listRecentRawEvents"))) {
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:589:    next.sinceIngestTsMs = effectiveSinceIngestTs;
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:1360:        const parsed = parseTrackerSourcePayload(payload);
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:1884:    const demoPoints = rawEventsToTrackerPoints(demoEvents);
+repos/tracker-dashboard/src/components/tracker-dashboard.tsx:2515:                      <code>queries:getDashboardEvents</code> with <code>{"{}"}</code>.

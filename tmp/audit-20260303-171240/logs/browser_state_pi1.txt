@@ -1,0 +1,7 @@
+Application error: a
+client
+-side exception has occurred while loading
+tracker-dashboard-nu.vercel.app
+(see the
+browser console
+for more information).

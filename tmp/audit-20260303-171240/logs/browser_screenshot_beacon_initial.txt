@@ -1,0 +1,2 @@
+saved: tmp/audit-20260303-171240/screenshots/beacon_explorer_initial.png
+size: 101547

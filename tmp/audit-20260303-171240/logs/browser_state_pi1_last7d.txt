@@ -1,0 +1,187 @@
+Tracker dashboard
+Overview
+Route monitor for Convex raw ingest data with incremental syncing, event analytics, and time-window filtering.
+Tracker node
+5:18 PM
+3 March
+[751]<button data-state=closed expanded=false />
+	Tracker:
+	SG10301 · pi-5-gateway-01
+[815]<span />
+	MPH
+[752]<button role=switch aria-checked=true data-state=checked value=on checked=true />
+[818]<span />
+	KM/H
+[753]<button />
+	Refresh
+[754]<button />
+	Recenter
+[755]<a />
+	Beacon Explorer
+[756]<button data-state=closed expanded=false />
+	Settings
+0/5 trackers online
+[929]<svg /> <!-- SVG content collapsed -->
+Map timespan
+[931]<button />
+	Last 1h
+[932]<button />
+	Last 6h
+[933]<button />
+	Last 24h
+[934]<button />
+	Last 7d
+From date
+[941]<button data-state=closed expanded=false />
+	February 24th, 2026
+From time
+|SHADOW(open)|[956]<input step=60 type=time value=17:18 format=HH:MM placeholder=HH:MM />
+To date
+[963]<button data-state=closed expanded=false />
+	March 3rd, 2026
+To time
+|SHADOW(open)|[978]<input step=60 type=time value=17:18 format=HH:MM placeholder=HH:MM />
+*[1233]<svg /> <!-- SVG content collapsed -->
+Stale tracker data: last
+heartbeat
+1d
+ago.
+Most recent
+heartbeat
+was at
+Mar 2, 2026, 11:57:39 AM
+. Verify LTE link and tracker power.
+*[1195]<div />
+	*[1196]<canvas aria-label=Map role=region />
+*[2041]<button title=Zoom in aria-label=Zoom in />
+*[2043]<button title=Zoom out aria-label=Zoom out />
+3 km
+*[2074]<div />
+	Telemetry point
+	*[2049]<button aria-label=Close popup />
+	gps fix
+	*[2052]<svg /> <!-- SVG content collapsed -->
+	25.76091, -80.14634
+	*[2056]<svg /> <!-- SVG content collapsed -->
+	1.5 km/h
+	*[2060]<svg /> <!-- SVG content collapsed -->
+	Mar 1, 2026, 6:39:09 PM
+	Method:
+	gnss
+	Altitude:
+	19.9
+*[1347]<div />
+	<svg /> <!-- SVG content collapsed -->
+Mar 1, 2026, 6:39:09 PM
+Speed:
+1.5
+km/h
+Route timeline
+1241/1241 points
+|SHADOW(open)|*[993]<input min=0 max=1240 type=range value=1240 valuemin=0 valuemax=1240 compound_components=(name=Value,role=slider,min=0.0,max=1240.0) />
+[1003]<svg /> <!-- SVG content collapsed -->
+Point inspector
+*[1260]<div role=tablist multiselectable=false />
+	*[1242]<button role=tab data-state=active id=radix-_r_6_-trigger-telemetry selected=true />
+		Telemetry
+	*[1243]<button role=tab data-state=inactive id=radix-_r_6_-trigger-raw selected=false />
+		Raw data
+*[1261]<div data-state=active role=tabpanel id=radix-_r_6_-content-telemetry />
+	Coordinates
+	25.76091
+	-80.14634
+	*[1246]<span />
+		Speed
+	1.5
+	km/h
+	Timestamp
+	3/1/2026, 6:39:09 PM
+	Event type
+	*[1251]<span />
+		gps fix
+	Location method
+	*[1253]<span />
+		gnss
+Last refresh:
+0 seconds ago
+Source:
+https://dutiful-bison-575.convex.cloud
+Function:
+queries:getDashboardEvents
+Model:
+raw_events + tracker_liveness
+Events in memory:
+1388
+Liveness tracker:
+pi-5-gateway-01
+Incoming speed:
+mph
+Window:
+Feb 24, 2026 17:18
+to
+Mar 3, 2026 17:18
+Distance
+[1023]<svg /> <!-- SVG content collapsed -->
+115.5
+km
+Average speed
+[1029]<svg /> <!-- SVG content collapsed -->
+5.1
+km/h
+Peak speed
+[1036]<svg /> <!-- SVG content collapsed -->
+119.0
+km/h
+Track duration
+[1044]<svg /> <!-- SVG content collapsed -->
+2816
+min
+Signal status
+Location
+[1049]<span />
+Disconnected
+[1055]<span />
+	Events
+[1053]<span />
+No event activity
+Event intelligence
+Total events
+1388
+GPS fixes
+1241
+Cell fallback
+0.0
+%)
+No-fix events
+0.0
+%)
+BLE/RFID scans
+146
+P95 ingest lag
+Recent beacon scans
+[1086]<div />
+	shown
+ble scan
+*[1264]<span />
+	17:16:15
+Tracker:
+pi-5-gateway-01
+Beacon: ble:4294967295
+ble scan
+*[1269]<span />
+	17:12:24
+Tracker:
+pi-5-gateway-01
+Beacon: ble:3329904352
+ble scan
+*[1274]<span />
+	16:47:30
+Tracker:
+pi-5-gateway-01
+Beacon: ble:4294967295
+ble scan
+*[1279]<span />
+	16:39:08
+Tracker:
+pi-5-gateway-01
+Beacon: ble:1369788749

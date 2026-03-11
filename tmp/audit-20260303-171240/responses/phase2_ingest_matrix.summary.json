@@ -1,0 +1,18 @@
+{
+  "run_id": "audit-20260303-171240",
+  "prefix": "audit-20260303-171240",
+  "total_cases": 76,
+  "success_2xx": 67,
+  "errors_4xx": 9,
+  "concurrency_total": 30,
+  "concurrency_duplicate_true": 29,
+  "concurrency_duplicate_false": 1,
+  "tracker_ids": [
+    "audit-20260303-171240-tracker-a",
+    "audit-20260303-171240-tracker-b"
+  ],
+  "beacon_ids": [
+    "ble:audit-20260303-171240:1001",
+    "rfid:audit-20260303-171240:ABCDEF123456"
+  ]
+}

@@ -1,0 +1,174 @@
+Tracker dashboard
+Overview
+Route monitor for Convex raw ingest data with incremental syncing, event analytics, and time-window filtering.
+Tracker node
+5:22 PM
+3 March
+[29]<button data-state=closed expanded=false />
+	Tracker:
+	audit-20260303-171240-tracker-a
+[96]<span />
+	MPH
+[30]<button role=switch aria-checked=true data-state=checked value=on checked=true />
+[99]<span />
+	KM/H
+[31]<button />
+	Refresh
+[32]<button />
+	Recenter
+[33]<a />
+	Beacon Explorer
+[34]<button data-state=closed expanded=false />
+	Settings
+0/5 trackers online
+*[284]<svg /> <!-- SVG content collapsed -->
+Map timespan
+*[286]<button />
+	Last 1h
+*[287]<button />
+	Last 6h
+*[288]<button />
+	Last 24h
+*[289]<button />
+	Last 7d
+From date
+*[296]<button data-state=closed expanded=false />
+	March 3rd, 2026
+From time
+|SHADOW(open)|*[311]<input step=60 type=time value=11:22 format=HH:MM placeholder=HH:MM />
+To date
+*[318]<button data-state=closed expanded=false />
+	March 3rd, 2026
+To time
+|SHADOW(open)|*[333]<input step=60 type=time value=17:22 format=HH:MM placeholder=HH:MM />
+*[755]<div />
+	*[756]<canvas aria-label=Map role=region />
+*[762]<button title=Zoom in aria-label=Zoom in />
+*[764]<button title=Zoom out aria-label=Zoom out />
+2 km
+*[799]<div />
+	Telemetry point
+	*[774]<button aria-label=Close popup />
+	gps cell fallback
+	*[777]<svg /> <!-- SVG content collapsed -->
+	40.71380, -74.01600
+	*[781]<svg /> <!-- SVG content collapsed -->
+	1530255.3 km/h
+	*[785]<svg /> <!-- SVG content collapsed -->
+	Mar 3, 2026, 5:14:19 PM
+	Accuracy:
+	500.0
+	Method:
+	cell_lbs_native
+*[642]<div />
+	<svg /> <!-- SVG content collapsed -->
+Mar 3, 2026, 5:14:19 PM
+Speed:
+1530255.4
+km/h
+Route timeline
+2/2 points
+|SHADOW(open)|*[348]<input min=0 max=1 type=range value=1 valuemin=0 valuemax=1 compound_components=(name=Value,role=slider,min=0.0,max=1.0) />
+*[358]<svg /> <!-- SVG content collapsed -->
+Point inspector
+*[561]<div role=tablist multiselectable=false />
+	*[540]<button role=tab data-state=active id=radix-_r_2_-trigger-telemetry selected=true />
+		Telemetry
+	*[541]<button role=tab data-state=inactive id=radix-_r_2_-trigger-raw selected=false />
+		Raw data
+*[562]<div data-state=active role=tabpanel id=radix-_r_2_-content-telemetry />
+	Coordinates
+	40.71380
+	-74.01600
+	*[544]<span />
+		Speed
+	1530255.3
+	km/h
+	Timestamp
+	3/3/2026, 5:14:19 PM
+	Event type
+	gps cell fallback
+	Location method
+	cell_lbs_native
+	Accuracy
+	500.0
+Last refresh:
+0 seconds ago
+Source:
+https://dutiful-bison-575.convex.cloud
+Function:
+queries:getDashboardEvents
+Model:
+raw_events + tracker_liveness
+Events in memory:
+10
+Liveness tracker:
+audit-20260303-171240-tracker-a
+Incoming speed:
+mph
+Window:
+Mar 3, 2026 11:22
+to
+Mar 3, 2026 17:22
+Distance
+*[378]<svg /> <!-- SVG content collapsed -->
+0.9
+km
+Average speed
+*[384]<svg /> <!-- SVG content collapsed -->
+765148.7
+km/h
+Peak speed
+*[391]<svg /> <!-- SVG content collapsed -->
+1530255.3
+km/h
+Track duration
+*[399]<svg /> <!-- SVG content collapsed -->
+min
+Signal status
+Location
+*[404]<span />
+Disconnected
+*[410]<span />
+	Events
+*[408]<span />
+No event activity
+Event intelligence
+Total events
+10
+GPS fixes
+Cell fallback
+10.0
+%)
+No-fix events
+0.0
+%)
+BLE/RFID scans
+P95 ingest lag
+Recent beacon scans
+*[441]<div />
+	shown
+ble scan
+*[565]<span />
+	17:16:11
+Tracker:
+audit-20260303-171240-tracker-a
+Beacon: ble:audit-20260303-171240:conflict
+ble scan
+*[570]<span />
+	17:16:11
+Tracker:
+audit-20260303-171240-tracker-a
+Beacon: ble:audit-20260303-171240:conflict
+ble scan
+*[575]<span />
+	17:16:11
+Tracker:
+audit-20260303-171240-tracker-a
+Beacon: ble:audit-20260303-171240:conflict
+ble scan
+*[580]<span />
+	17:16:11
+Tracker:
+audit-20260303-171240-tracker-a
+Beacon: ble:audit-20260303-171240:lifecycle

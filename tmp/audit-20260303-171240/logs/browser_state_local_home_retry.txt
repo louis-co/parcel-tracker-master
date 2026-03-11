@@ -1,0 +1,25 @@
+Tracker dashboard
+Overview
+Route monitor for Convex raw ingest data with incremental syncing, event analytics, and time-window filtering.
+Tracker node
+5:22 PM
+3 March
+[29]<button data-state=closed expanded=false />
+	Tracker:
+	Select tracker
+[96]<span />
+	MPH
+[30]<button role=switch aria-checked=true data-state=checked value=on checked=true />
+[99]<span />
+	KM/H
+[31]<button disabled=true />
+	Refresh
+[32]<button disabled=true />
+	Recenter
+[33]<a />
+	Beacon Explorer
+[34]<button data-state=closed expanded=false />
+	Settings
+0/5 trackers online
+Please select a tracker
+Choose a tracker from the selector to load map and telemetry data.

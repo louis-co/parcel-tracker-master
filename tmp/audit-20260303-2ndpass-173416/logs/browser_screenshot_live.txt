@@ -1,0 +1,2 @@
+saved: tmp/audit-20260303-2ndpass-173416/screenshots/live_tracker_browseruse.png
+size: 62307

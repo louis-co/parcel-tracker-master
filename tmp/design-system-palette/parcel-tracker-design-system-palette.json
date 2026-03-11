@@ -1,0 +1,549 @@
+{
+  "generatedAt": "2026-03-10T12:15:11.092Z",
+  "tokenCatalog": [
+    {
+      "section": "Foundation",
+      "title": "Reduced core palette",
+      "tokens": [
+        [
+          "tone-ink",
+          "Deepest canvas color. The page background and darkest visual anchor."
+        ],
+        [
+          "tone-panel",
+          "Primary panel fill for cards, sheets, and glass surfaces."
+        ],
+        [
+          "tone-line",
+          "Border and divider tone for structure without hard contrast."
+        ],
+        [
+          "tone-text",
+          "Primary reading text used across headings and body copy."
+        ],
+        [
+          "tone-accent",
+          "Single brand/action hue. Used for primary emphasis, active states, live states, and navigation."
+        ],
+        [
+          "tone-warning",
+          "Warning hue. Used for fallback, caution, and amber callouts."
+        ],
+        [
+          "tone-danger",
+          "Error/destructive hue. Used for offline and failure states."
+        ],
+        [
+          "shell-top",
+          "Top gradient stop for the atmospheric page background."
+        ],
+        [
+          "shell-bottom",
+          "Bottom gradient stop for the atmospheric page background."
+        ]
+      ]
+    },
+    {
+      "section": "UI",
+      "title": "Semantic surfaces",
+      "tokens": [
+        [
+          "background",
+          "App background token consumed by the design system."
+        ],
+        [
+          "foreground",
+          "Default foreground token for generic text and iconography."
+        ],
+        [
+          "card",
+          "Default elevated surface token for cards and panels."
+        ],
+        [
+          "popover",
+          "Floating surface token for overlays and popovers."
+        ],
+        [
+          "primary",
+          "Primary action fill, now mapped directly to the accent family."
+        ],
+        [
+          "secondary",
+          "Quiet secondary surface for low-priority controls."
+        ],
+        [
+          "muted",
+          "Subdued surface used for softer utility zones."
+        ],
+        [
+          "accent",
+          "Accent-tinted supporting surface for hover and highlight treatment."
+        ],
+        [
+          "destructive",
+          "Destructive action fill, mapped to the danger family."
+        ],
+        [
+          "border",
+          "Default border token used across panels and fields."
+        ],
+        [
+          "input",
+          "Input/control background token."
+        ],
+        [
+          "ring",
+          "Focus and active-outline token."
+        ]
+      ]
+    },
+    {
+      "section": "Status",
+      "title": "Feedback states",
+      "tokens": [
+        [
+          "status-live-fg",
+          "Live/healthy foreground. Still semantic, but now derived from the single accent family."
+        ],
+        [
+          "status-live-bg",
+          "Live/healthy background derived from the accent family."
+        ],
+        [
+          "status-info-fg",
+          "Informational foreground. No separate blue family anymore; this now derives from accent."
+        ],
+        [
+          "status-info-bg",
+          "Informational background derived from the accent family."
+        ],
+        [
+          "status-warning-fg",
+          "Warning foreground derived from the warning family."
+        ],
+        [
+          "status-warning-bg",
+          "Warning background derived from the warning family."
+        ],
+        [
+          "status-error-fg",
+          "Error/offline foreground derived from the danger family."
+        ],
+        [
+          "status-error-bg",
+          "Error/offline background derived from the danger family."
+        ],
+        [
+          "status-neutral-fg",
+          "Neutral/inactive foreground from the neutral system."
+        ],
+        [
+          "status-neutral-bg",
+          "Neutral/inactive background from the neutral system."
+        ],
+        [
+          "alert-panel-fg",
+          "Text inside amber callout panels."
+        ],
+        [
+          "alert-panel-bg",
+          "Amber callout panel background."
+        ],
+        [
+          "alert-panel-border",
+          "Amber callout panel border."
+        ]
+      ]
+    },
+    {
+      "section": "Map",
+      "title": "Map and spatial UI",
+      "tokens": [
+        [
+          "map-panel",
+          "Map chrome surface around the map itself."
+        ],
+        [
+          "map-text",
+          "Map overlay text tone."
+        ],
+        [
+          "map-accent",
+          "Map highlight color. This remains aligned with the main accent family."
+        ]
+      ]
+    }
+  ],
+  "resolved": {
+    "tone-ink": {
+      "dark": {
+        "cssColor": "rgb(16, 19, 17)",
+        "hex": "#101311"
+      },
+      "light": {
+        "cssColor": "rgb(243, 237, 224)",
+        "hex": "#F3EDE0"
+      }
+    },
+    "tone-panel": {
+      "dark": {
+        "cssColor": "rgb(23, 27, 24)",
+        "hex": "#171B18"
+      },
+      "light": {
+        "cssColor": "rgb(255, 253, 248)",
+        "hex": "#FFFDF8"
+      }
+    },
+    "tone-line": {
+      "dark": {
+        "cssColor": "rgb(49, 56, 51)",
+        "hex": "#313833"
+      },
+      "light": {
+        "cssColor": "rgb(200, 193, 179)",
+        "hex": "#C8C1B3"
+      }
+    },
+    "tone-text": {
+      "dark": {
+        "cssColor": "rgb(221, 229, 219)",
+        "hex": "#DDE5DB"
+      },
+      "light": {
+        "cssColor": "rgb(26, 36, 30)",
+        "hex": "#1A241E"
+      }
+    },
+    "tone-accent": {
+      "dark": {
+        "cssColor": "rgb(185, 216, 190)",
+        "hex": "#B9D8BE"
+      },
+      "light": {
+        "cssColor": "rgb(72, 111, 87)",
+        "hex": "#486F57"
+      }
+    },
+    "tone-warning": {
+      "dark": {
+        "cssColor": "rgb(244, 201, 93)",
+        "hex": "#F4C95D"
+      },
+      "light": {
+        "cssColor": "rgb(184, 122, 17)",
+        "hex": "#B87A11"
+      }
+    },
+    "tone-danger": {
+      "dark": {
+        "cssColor": "rgb(239, 122, 122)",
+        "hex": "#EF7A7A"
+      },
+      "light": {
+        "cssColor": "rgb(182, 81, 81)",
+        "hex": "#B65151"
+      }
+    },
+    "shell-top": {
+      "dark": {
+        "cssColor": "rgb(13, 16, 14)",
+        "hex": "#0D100E"
+      },
+      "light": {
+        "cssColor": "rgb(251, 247, 239)",
+        "hex": "#FBF7EF"
+      }
+    },
+    "shell-bottom": {
+      "dark": {
+        "cssColor": "rgb(21, 25, 22)",
+        "hex": "#151916"
+      },
+      "light": {
+        "cssColor": "rgb(237, 228, 212)",
+        "hex": "#EDE4D4"
+      }
+    },
+    "background": {
+      "dark": {
+        "cssColor": "rgb(16, 19, 17)",
+        "hex": "#101311"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.958588 0.936941 0.889726)",
+        "hex": "#F4EFE3"
+      }
+    },
+    "foreground": {
+      "dark": {
+        "cssColor": "rgb(221, 229, 219)",
+        "hex": "#DDE5DB"
+      },
+      "light": {
+        "cssColor": "rgb(26, 36, 30)",
+        "hex": "#1A241E"
+      }
+    },
+    "card": {
+      "dark": {
+        "cssColor": "color(srgb 0.088549 0.104 0.0924706)",
+        "hex": "#171B18"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.998118 0.989647 0.968784)",
+        "hex": "#FFFCF7"
+      }
+    },
+    "popover": {
+      "dark": {
+        "cssColor": "color(srgb 0.087451 0.102745 0.0913725)",
+        "hex": "#161A17"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.997176 0.988392 0.966902)",
+        "hex": "#FEFCF7"
+      }
+    },
+    "primary": {
+      "dark": {
+        "cssColor": "rgb(185, 216, 190)",
+        "hex": "#B9D8BE"
+      },
+      "light": {
+        "cssColor": "rgb(72, 111, 87)",
+        "hex": "#486F57"
+      }
+    },
+    "secondary": {
+      "dark": {
+        "cssColor": "color(srgb 0.108549 0.126353 0.113176)",
+        "hex": "#1C201D"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.986824 0.974588 0.946196)",
+        "hex": "#FCF9F1"
+      }
+    },
+    "muted": {
+      "dark": {
+        "cssColor": "color(srgb 0.120784 0.14 0.125882)",
+        "hex": "#1F2420"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.977412 0.962039 0.927373)",
+        "hex": "#F9F5EC"
+      }
+    },
+    "accent": {
+      "dark": {
+        "cssColor": "color(srgb 0.217255 0.254118 0.224314)",
+        "hex": "#374139"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.913882 0.925333 0.896784)",
+        "hex": "#E9ECE5"
+      }
+    },
+    "destructive": {
+      "dark": {
+        "cssColor": "color(srgb 0.71702 0.381569 0.37851)",
+        "hex": "#B76161"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.776706 0.466039 0.461726)",
+        "hex": "#C67776"
+      }
+    },
+    "border": {
+      "dark": {
+        "cssColor": "color(srgb 0.313569 0.341725 0.318588)",
+        "hex": "#505751"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.840392 0.818039 0.772314)",
+        "hex": "#D6D1C5"
+      }
+    },
+    "input": {
+      "dark": {
+        "cssColor": "color(srgb 0.103451 0.120667 0.107882)",
+        "hex": "#1A1F1C"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.992941 0.982745 0.958431)",
+        "hex": "#FDFBF4"
+      }
+    },
+    "ring": {
+      "dark": {
+        "cssColor": "color(srgb 0.72549 0.847059 0.745098 / 0.48)",
+        "hex": "#BAD7BE7A"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.282353 0.435294 0.341176 / 0.3)",
+        "hex": "#4971564D"
+      }
+    },
+    "status-live-fg": {
+      "dark": {
+        "cssColor": "color(srgb 0.769412 0.871529 0.785882)",
+        "hex": "#C4DEC8"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.259765 0.400471 0.313882)",
+        "hex": "#426650"
+      }
+    },
+    "status-live-bg": {
+      "dark": {
+        "cssColor": "color(srgb 0.72549 0.847059 0.745098 / 0.14)",
+        "hex": "#B8D5BF24"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.282353 0.435294 0.341176 / 0.14)",
+        "hex": "#47715524"
+      }
+    },
+    "status-info-fg": {
+      "dark": {
+        "cssColor": "color(srgb 0.785882 0.880706 0.801176)",
+        "hex": "#C8E1CC"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.248471 0.383059 0.300235)",
+        "hex": "#3F624D"
+      }
+    },
+    "status-info-bg": {
+      "dark": {
+        "cssColor": "color(srgb 0.72549 0.847059 0.745098 / 0.1)",
+        "hex": "#BAD8BA1A"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.282353 0.435294 0.341176 / 0.11)",
+        "hex": "#496D5B1C"
+      }
+    },
+    "status-warning-fg": {
+      "dark": {
+        "cssColor": "rgb(255, 241, 196)",
+        "hex": "#FFF1C4"
+      },
+      "light": {
+        "cssColor": "rgb(109, 74, 0)",
+        "hex": "#6D4A00"
+      }
+    },
+    "status-warning-bg": {
+      "dark": {
+        "cssColor": "color(srgb 0.956863 0.788235 0.364706 / 0.14)",
+        "hex": "#F1C65C24"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.721569 0.478431 0.0666667 / 0.16)",
+        "hex": "#BB7C1329"
+      }
+    },
+    "status-error-fg": {
+      "dark": {
+        "cssColor": "rgb(255, 227, 227)",
+        "hex": "#FFE3E3"
+      },
+      "light": {
+        "cssColor": "rgb(119, 47, 47)",
+        "hex": "#772F2F"
+      }
+    },
+    "status-error-bg": {
+      "dark": {
+        "cssColor": "color(srgb 0.937255 0.478431 0.478431 / 0.16)",
+        "hex": "#EC7C7C29"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.713726 0.317647 0.317647 / 0.14)",
+        "hex": "#B84E4E24"
+      }
+    },
+    "status-neutral-fg": {
+      "dark": {
+        "cssColor": "color(srgb 0.866667 0.898039 0.858823 / 0.72)",
+        "hex": "#DCE5DBB8"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.101961 0.141176 0.117647 / 0.68)",
+        "hex": "#1B231DAD"
+      }
+    },
+    "status-neutral-bg": {
+      "dark": {
+        "cssColor": "color(srgb 0.10651 0.124078 0.111059)",
+        "hex": "#1B201C"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.984941 0.972078 0.942431)",
+        "hex": "#FBF8F0"
+      }
+    },
+    "alert-panel-fg": {
+      "dark": {
+        "cssColor": "rgb(255, 240, 210)",
+        "hex": "#FFF0D2"
+      },
+      "light": {
+        "cssColor": "rgb(110, 77, 15)",
+        "hex": "#6E4D0F"
+      }
+    },
+    "alert-panel-bg": {
+      "dark": {
+        "cssColor": "color(srgb 0.956863 0.788235 0.364706 / 0.12)",
+        "hex": "#F7C55A1F"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.721569 0.478431 0.0666667 / 0.14)",
+        "hex": "#B8780E24"
+      }
+    },
+    "alert-panel-border": {
+      "dark": {
+        "cssColor": "color(srgb 0.956863 0.788235 0.364706 / 0.58)",
+        "hex": "#F5CA5D94"
+      },
+      "light": {
+        "cssColor": "color(srgb 0.721569 0.478431 0.0666667 / 0.42)",
+        "hex": "#B87A116B"
+      }
+    },
+    "map-panel": {
+      "dark": {
+        "cssColor": "rgb(23, 27, 24)",
+        "hex": "#171B18"
+      },
+      "light": {
+        "cssColor": "rgb(255, 255, 255)",
+        "hex": "#FFFFFF"
+      }
+    },
+    "map-text": {
+      "dark": {
+        "cssColor": "rgb(221, 229, 219)",
+        "hex": "#DDE5DB"
+      },
+      "light": {
+        "cssColor": "rgb(26, 36, 30)",
+        "hex": "#1A241E"
+      }
+    },
+    "map-accent": {
+      "dark": {
+        "cssColor": "rgb(185, 216, 190)",
+        "hex": "#B9D8BE"
+      },
+      "light": {
+        "cssColor": "rgb(72, 111, 87)",
+        "hex": "#486F57"
+      }
+    }
+  }
+}

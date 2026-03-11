@@ -1,0 +1,2 @@
+saved: tmp/audit-20260303-171240/screenshots/dashboard_pi1_clean.png
+size: 136607

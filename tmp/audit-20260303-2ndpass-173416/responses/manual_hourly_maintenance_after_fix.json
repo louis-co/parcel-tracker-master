@@ -1,0 +1,16 @@
+{
+  "beaconCount": 6,
+  "cursorBeaconId": "ble:audit-20260303-171240:lifecycle",
+  "failedCount": 0,
+  "legacyShadowRepairResult": {
+    "activeCount": 2,
+    "failedCount": 0,
+    "ok": true,
+    "processedCount": 2,
+    "status": "completed"
+  },
+  "mode": "shadow",
+  "ok": true,
+  "processedCount": 3,
+  "status": "interrupted"
+}

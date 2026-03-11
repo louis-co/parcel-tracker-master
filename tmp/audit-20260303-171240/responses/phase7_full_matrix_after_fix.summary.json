@@ -1,0 +1,9 @@
+{
+  "run_id": "audit-20260303-171240-final",
+  "total_cases": 76,
+  "success_2xx": 65,
+  "errors_4xx": 11,
+  "concurrency_total": 30,
+  "concurrency_duplicate_true": 29,
+  "concurrency_duplicate_false": 1
+}

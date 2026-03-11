@@ -1,0 +1,425 @@
+{
+  "inputs": {
+    "beacon_lifecycle": "ble:audit-20260303-171240:lifecycle",
+    "beacon_conflict": "ble:audit-20260303-171240:conflict",
+    "tracking_1": "audit-20260303-171240-TN-001",
+    "tracking_2": "audit-20260303-171240-TN-002",
+    "tracker_a": "audit-20260303-171240-tracker-a",
+    "tracker_b": "audit-20260303-171240-tracker-b"
+  },
+  "cleanup_clear_tracking": [
+    200,
+    {
+      "status": "success",
+      "value": {
+        "beaconId": "ble:audit-20260303-171240:lifecycle",
+        "cleared": false,
+        "ok": true,
+        "previousTrackingNumber": null
+      }
+    }
+  ],
+  "assign_tracking_1": [
+    200,
+    {
+      "status": "success",
+      "value": {
+        "beaconId": "ble:audit-20260303-171240:lifecycle",
+        "changed": true,
+        "ok": true,
+        "trackingNumber": "AUDIT-20260303-171240-TN-001"
+      }
+    }
+  ],
+  "scan_a_1": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh744hy6hr6v4ym7jy25dthc2s8273td"
+    }
+  ],
+  "owner_after_a1": [
+    200,
+    {
+      "status": "success",
+      "value": {
+        "beaconId": "ble:audit-20260303-171240:lifecycle",
+        "confidence": 0.9,
+        "isActiveConflict": false,
+        "lastSeenTsMs": 1772576171246.0,
+        "manualPrior": null,
+        "missedHeartbeats": 0.0,
+        "missingSinceTsMs": null,
+        "ownerState": "assigned",
+        "routeSession": {
+          "active": true,
+          "endReason": null,
+          "endTsMs": null,
+          "gapBackfillCount": 0.0,
+          "startReason": "reattach_scan",
+          "startTsMs": 1772576171246.0,
+          "status": "active",
+          "trackerId": "audit-20260303-171240-tracker-a",
+          "trackingNumber": "AUDIT-20260303-171240-TN-001"
+        },
+        "source": "live",
+        "state": "ambiguous",
+        "trackerId": "audit-20260303-171240-tracker-a",
+        "trackingNumber": "AUDIT-20260303-171240-TN-001"
+      }
+    }
+  ],
+  "routes_after_a1": [
+    200,
+    {
+      "status": "success",
+      "value": [
+        {
+          "_creationTime": 1772576171965.685,
+          "_id": "ks77far6btpyt7zv12ehv9hgdd827738",
+          "beaconId": "ble:audit-20260303-171240:lifecycle",
+          "gapBackfillCount": 0.0,
+          "startReason": "reattach_scan",
+          "startTsMs": 1772576171246.0,
+          "status": "active",
+          "trackerId": "audit-20260303-171240-tracker-a",
+          "trackingNumber": "AUDIT-20260303-171240-TN-001",
+          "updatedAtMs": 1772576171246.0
+        }
+      ]
+    }
+  ],
+  "scan_b_1": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh70dsy9cpxa15g6p96r09nwe5826e5q"
+    }
+  ],
+  "owner_after_b1": [
+    200,
+    {
+      "status": "success",
+      "value": {
+        "beaconId": "ble:audit-20260303-171240:lifecycle",
+        "confidence": 0.55,
+        "isActiveConflict": true,
+        "lastSeenTsMs": 1772576171247.0,
+        "manualPrior": null,
+        "missedHeartbeats": 0.0,
+        "missingSinceTsMs": null,
+        "ownerState": "ambiguous",
+        "routeSession": {
+          "active": true,
+          "endReason": null,
+          "endTsMs": null,
+          "gapBackfillCount": 0.0,
+          "startReason": "reattach_scan",
+          "startTsMs": 1772576171246.0,
+          "status": "active",
+          "trackerId": "audit-20260303-171240-tracker-a",
+          "trackingNumber": "AUDIT-20260303-171240-TN-001"
+        },
+        "source": "live",
+        "state": "ambiguous",
+        "trackerId": "audit-20260303-171240-tracker-a",
+        "trackingNumber": "AUDIT-20260303-171240-TN-001"
+      }
+    }
+  ],
+  "routes_after_b1": [
+    200,
+    {
+      "status": "success",
+      "value": [
+        {
+          "_creationTime": 1772576171965.685,
+          "_id": "ks77far6btpyt7zv12ehv9hgdd827738",
+          "beaconId": "ble:audit-20260303-171240:lifecycle",
+          "gapBackfillCount": 0.0,
+          "startReason": "reattach_scan",
+          "startTsMs": 1772576171246.0,
+          "status": "active",
+          "trackerId": "audit-20260303-171240-tracker-a",
+          "trackingNumber": "AUDIT-20260303-171240-TN-001",
+          "updatedAtMs": 1772576171246.0
+        }
+      ]
+    }
+  ],
+  "assign_tracking_2": [
+    200,
+    {
+      "status": "success",
+      "value": {
+        "beaconId": "ble:audit-20260303-171240:lifecycle",
+        "changed": true,
+        "ok": true,
+        "trackingNumber": "AUDIT-20260303-171240-TN-002"
+      }
+    }
+  ],
+  "scan_b_2": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh7beg6zwk841mvkh95bmvx5p9827ecz"
+    }
+  ],
+  "routes_after_tracking_change": [
+    200,
+    {
+      "status": "success",
+      "value": [
+        {
+          "_creationTime": 1772576171965.685,
+          "_id": "ks77far6btpyt7zv12ehv9hgdd827738",
+          "beaconId": "ble:audit-20260303-171240:lifecycle",
+          "endReason": "tracking_changed",
+          "endTsMs": 1772576173228.0,
+          "gapBackfillCount": 0.0,
+          "startReason": "reattach_scan",
+          "startTsMs": 1772576171246.0,
+          "status": "closed",
+          "trackerId": "audit-20260303-171240-tracker-a",
+          "trackingNumber": "AUDIT-20260303-171240-TN-001",
+          "updatedAtMs": 1772576173228.0
+        }
+      ]
+    }
+  ],
+  "heartbeat_degrade_1": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh7cyre8c3etabpyy45mx2fzth827rd3"
+    }
+  ],
+  "heartbeat_degrade_2": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh7fznd1ttb12286qywhzyghxd827rvb"
+    }
+  ],
+  "heartbeat_degrade_3": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh718tby2frzm61egqfgpwme71826eyg"
+    }
+  ],
+  "heartbeat_degrade_4": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh720jmsqbhttn7p65wzeefqax82650z"
+    }
+  ],
+  "heartbeat_degrade_5": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh7frga9e4a01hmmnbejna88ds8272mh"
+    }
+  ],
+  "owner_after_heartbeats": [
+    200,
+    {
+      "status": "success",
+      "value": {
+        "beaconId": "ble:audit-20260303-171240:lifecycle",
+        "confidence": 0.55,
+        "isActiveConflict": true,
+        "lastSeenTsMs": 1772576171248.0,
+        "manualPrior": null,
+        "missedHeartbeats": 0.0,
+        "missingSinceTsMs": null,
+        "ownerState": "ambiguous",
+        "routeSession": {
+          "active": false,
+          "endReason": "tracking_changed",
+          "endTsMs": 1772576173228.0,
+          "gapBackfillCount": 0.0,
+          "startReason": "reattach_scan",
+          "startTsMs": 1772576171246.0,
+          "status": "closed",
+          "trackerId": "audit-20260303-171240-tracker-a",
+          "trackingNumber": "AUDIT-20260303-171240-TN-001"
+        },
+        "source": "live",
+        "state": "ambiguous",
+        "trackerId": "audit-20260303-171240-tracker-a",
+        "trackingNumber": "AUDIT-20260303-171240-TN-002"
+      }
+    }
+  ],
+  "routes_after_heartbeats": [
+    200,
+    {
+      "status": "success",
+      "value": [
+        {
+          "_creationTime": 1772576171965.685,
+          "_id": "ks77far6btpyt7zv12ehv9hgdd827738",
+          "beaconId": "ble:audit-20260303-171240:lifecycle",
+          "endReason": "tracking_changed",
+          "endTsMs": 1772576173228.0,
+          "gapBackfillCount": 0.0,
+          "startReason": "reattach_scan",
+          "startTsMs": 1772576171246.0,
+          "status": "closed",
+          "trackerId": "audit-20260303-171240-tracker-a",
+          "trackingNumber": "AUDIT-20260303-171240-TN-001",
+          "updatedAtMs": 1772576173228.0
+        }
+      ]
+    }
+  ],
+  "clear_tracking_end": [
+    200,
+    {
+      "status": "success",
+      "value": {
+        "beaconId": "ble:audit-20260303-171240:lifecycle",
+        "cleared": true,
+        "ok": true,
+        "previousTrackingNumber": "AUDIT-20260303-171240-TN-002"
+      }
+    }
+  ],
+  "routes_after_clear": [
+    200,
+    {
+      "status": "success",
+      "value": [
+        {
+          "_creationTime": 1772576171965.685,
+          "_id": "ks77far6btpyt7zv12ehv9hgdd827738",
+          "beaconId": "ble:audit-20260303-171240:lifecycle",
+          "endReason": "tracking_changed",
+          "endTsMs": 1772576173228.0,
+          "gapBackfillCount": 0.0,
+          "startReason": "reattach_scan",
+          "startTsMs": 1772576171246.0,
+          "status": "closed",
+          "trackerId": "audit-20260303-171240-tracker-a",
+          "trackingNumber": "AUDIT-20260303-171240-TN-001",
+          "updatedAtMs": 1772576173228.0
+        }
+      ]
+    }
+  ],
+  "conflict_scan_0": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh7atdmhv7vbaybn03ravesfbx8268ca"
+    }
+  ],
+  "conflict_scan_1": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh7d3b0y32hbsphkd6zwx72zj5827xf4"
+    }
+  ],
+  "conflict_scan_2": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh73e8cwc6jzbmny1h5xyt53sh827rfh"
+    }
+  ],
+  "conflict_scan_3": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh7cq172ckybwr0b2gmfrmh5r5826zv3"
+    }
+  ],
+  "conflict_scan_4": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh71etw48r3967vq79jt351dwd827d3c"
+    }
+  ],
+  "conflict_scan_5": [
+    200,
+    {
+      "duplicate": false,
+      "ok": true,
+      "rawEventId": "jh784jv8zd85resqq7f5vxjech826fvr"
+    }
+  ],
+  "conflict_state_list": [
+    200,
+    {
+      "status": "success",
+      "value": [
+        {
+          "_creationTime": 1772576171965.6848,
+          "_id": "k17dpgec3xn8n46dh61c49bygd82791j",
+          "beaconId": "ble:audit-20260303-171240:lifecycle",
+          "isActiveConflict": true,
+          "lastAmbiguousTsMs": 1772576171248.0,
+          "lastOverlapTsMs": 1772576171248.0,
+          "repairPriority": 7.999666805555556,
+          "updatedAtMs": 1772576173647.0
+        },
+        {
+          "_creationTime": 1772576175716.5388,
+          "_id": "k17bjkyj72nhm5kf9kz39ds3018263dm",
+          "beaconId": "ble:audit-20260303-171240:conflict",
+          "isActiveConflict": true,
+          "lastAmbiguousTsMs": 1772576171350.0,
+          "lastOverlapTsMs": 1772576171350.0,
+          "repairPriority": 7.99914,
+          "updatedAtMs": 1772576177542.0
+        }
+      ]
+    }
+  ],
+  "conflict_owner": [
+    200,
+    {
+      "status": "success",
+      "value": {
+        "beaconId": "ble:audit-20260303-171240:conflict",
+        "confidence": 0.55,
+        "isActiveConflict": true,
+        "lastSeenTsMs": 1772576171350.0,
+        "manualPrior": null,
+        "missedHeartbeats": 0.0,
+        "missingSinceTsMs": null,
+        "ownerState": "ambiguous",
+        "routeSession": null,
+        "source": "live",
+        "state": "ambiguous",
+        "trackerId": "audit-20260303-171240-tracker-a",
+        "trackingNumber": null
+      }
+    }
+  ],
+  "compact_assertions": {
+    "owner_after_b1_tracker": "audit-20260303-171240-tracker-a",
+    "owner_after_heartbeats_ownerState": "ambiguous",
+    "owner_after_heartbeats_missedHeartbeats": 0.0,
+    "conflict_list_contains_test_beacon": true,
+    "routes_after_clear_active_count": 0
+  }
+}

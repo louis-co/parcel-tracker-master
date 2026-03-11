@@ -1,0 +1,110 @@
+Tracker dashboard
+Overview
+Route monitor for Convex raw ingest data with incremental syncing, event analytics, and time-window filtering.
+Tracker node
+5:18 PM
+3 March
+[751]<button data-state=closed expanded=false />
+	Tracker:
+	SG10301 · pi-5-gateway-01
+[815]<span />
+	MPH
+[752]<button role=switch aria-checked=true data-state=checked value=on checked=true />
+[818]<span />
+	KM/H
+[753]<button />
+	Refresh
+[754]<button />
+	Recenter
+[755]<a />
+	Beacon Explorer
+[756]<button data-state=closed expanded=false />
+	Settings
+Connection issue
+*[929]<svg /> <!-- SVG content collapsed -->
+Map timespan
+*[931]<button />
+	Last 1h
+*[932]<button />
+	Last 6h
+*[933]<button />
+	Last 24h
+*[934]<button />
+	Last 7d
+From date
+*[941]<button data-state=closed expanded=false />
+	March 3rd, 2026
+From time
+|SHADOW(open)|*[956]<input step=60 type=time value=11:18 format=HH:MM placeholder=HH:MM />
+To date
+*[963]<button data-state=closed expanded=false />
+	March 3rd, 2026
+To time
+|SHADOW(open)|*[978]<input step=60 type=time value=17:18 format=HH:MM placeholder=HH:MM />
+*[1183]<svg /> <!-- SVG content collapsed -->
+Could not load Convex route data.
+No tracker telemetry found in the response.
+*[1207]<button title=Zoom in aria-label=Zoom in />
+*[1209]<button title=Zoom out aria-label=Zoom out />
+300 km
+No route points in this time window.
+Try Last 6h or Last 24h, then refresh to confirm recent telemetry.
+No speed samples in this timespan.
+Route timeline
+No points
+*[1003]<svg /> <!-- SVG content collapsed -->
+Point inspector
+No point in current timespan.
+Last refresh:
+never
+Source:
+https://dutiful-bison-575.convex.cloud
+Function:
+queries:getDashboardEvents
+Model:
+legacy points
+Events in memory:
+Incoming speed:
+mph
+Window:
+Mar 3, 2026 11:18
+to
+Mar 3, 2026 17:18
+Distance
+*[1023]<svg /> <!-- SVG content collapsed -->
+0.0
+km
+Average speed
+*[1029]<svg /> <!-- SVG content collapsed -->
+0.0
+km/h
+Peak speed
+*[1036]<svg /> <!-- SVG content collapsed -->
+0.0
+km/h
+Track duration
+*[1044]<svg /> <!-- SVG content collapsed -->
+min
+Signal status
+Location
+*[1049]<span />
+Disconnected
+*[1055]<span />
+	Events
+*[1053]<span />
+No event activity
+Event intelligence
+Total events
+GPS fixes
+Cell fallback
+0.0
+%)
+No-fix events
+0.0
+%)
+BLE/RFID scans
+P95 ingest lag
+Recent beacon scans
+*[1086]<div />
+	shown
+No BLE/RFID scans in current payload.

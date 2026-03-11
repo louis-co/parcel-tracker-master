@@ -1,0 +1,2 @@
+saved: tmp/audit-20260303-171240/screenshots/live_dashboard_tracker_a_postfix_check.png
+size: 454543

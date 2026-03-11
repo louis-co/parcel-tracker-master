@@ -1,0 +1,12 @@
+{
+  "performance": 80,
+  "accessibility": 87,
+  "bestPractices": 96,
+  "seo": 100,
+  "fcpMs": 1126.3535000000002,
+  "lcpMs": 5387.227499999999,
+  "tbtMs": 36,
+  "cls": 0,
+  "speedIndexMs": 2638.707548030281,
+  "interactiveMs": 5387.227499999999
+}

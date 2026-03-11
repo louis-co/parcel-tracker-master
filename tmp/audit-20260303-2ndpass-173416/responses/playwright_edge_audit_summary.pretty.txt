@@ -1,0 +1,50 @@
+{
+  "baseUrl": "http://localhost:3302",
+  "trackerId": "audit-20260303-171240-final-tracker-b",
+  "checks": {
+    "reversedDateNoteVisible": true,
+    "invalidJsonRejected": true,
+    "invalidPathRejected": true,
+    "injectionStylePlateRejected": true,
+    "skeletonVisibleUnderSlowQuery": false,
+    "mobileHorizontalOverflow": false
+  },
+  "timings": {
+    "desktop": {
+      "navigation": {
+        "domContentLoadedEventEnd": 75.10000002384186,
+        "loadEventEnd": 110.20000004768372,
+        "responseEnd": 13.700000047683716,
+        "transferSize": 4730
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "startTime": 80
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 344
+        }
+      ]
+    },
+    "mobile": {
+      "navigation": {
+        "domContentLoadedEventEnd": 15.800000011920929,
+        "loadEventEnd": 18.600000023841858,
+        "responseEnd": 2.200000047683716,
+        "transferSize": 4701
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "startTime": 24
+        },
+        {
+          "name": "first-contentful-paint",
+          "startTime": 1832
+        }
+      ]
+    }
+  }
+}

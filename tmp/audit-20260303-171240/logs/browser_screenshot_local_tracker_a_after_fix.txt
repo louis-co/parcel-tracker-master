@@ -1,0 +1,2 @@
+saved: tmp/audit-20260303-171240/screenshots/local_dashboard_tracker_a_after_fix.png
+size: 31565

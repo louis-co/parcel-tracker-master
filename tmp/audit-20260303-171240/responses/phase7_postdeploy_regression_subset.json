@@ -1,0 +1,83 @@
+{
+  "prefix": "audit-20260303-171240-postfix",
+  "cases": [
+    {
+      "case": "valid_gps_fix",
+      "status": 200,
+      "body": "{\"duplicate\":false,\"ok\":true,\"rawEventId\":\"jh72q4ax74h5rrsm5433p181c98273pr\"}",
+      "payload": {
+        "eventId": "audit-20260303-171240-postfix-valid-fix",
+        "contractVersion": "1.0.0",
+        "trackerId": "audit-20260303-171240-postfix-tracker",
+        "eventType": "gps_fix",
+        "trackerTsMs": 1772576631480,
+        "seq": 1,
+        "location": {
+          "lat": 40.7,
+          "lon": -74.0,
+          "method": "gnss"
+        }
+      }
+    },
+    {
+      "case": "invalid_out_of_range_lat",
+      "status": 400,
+      "body": "{\"ok\":false,\"error\":\"Uncaught Error: location.lat must be a finite number between -90 and 90.\\n    at assertEventSemantics (../../convex/ingest.ts:97:9)\\n    at handler (../../convex/ingest.ts:181:7)\\n\"}",
+      "payload": {
+        "eventId": "audit-20260303-171240-postfix-invalid-lat",
+        "contractVersion": "1.0.0",
+        "trackerId": "audit-20260303-171240-postfix-tracker",
+        "eventType": "gps_fix",
+        "trackerTsMs": 1772576631481,
+        "seq": 2,
+        "location": {
+          "lat": 190.0,
+          "lon": -74.0,
+          "method": "gnss"
+        }
+      }
+    },
+    {
+      "case": "invalid_sourcePayload_scalar",
+      "status": 400,
+      "body": "{\"ok\":false,\"error\":\"Uncaught Error: sourcePayload must be an object when provided.\\n    at assertEventSemantics (../../convex/ingest.ts:93:11)\\n    at handler (../../convex/ingest.ts:181:7)\\n\"}",
+      "payload": {
+        "eventId": "audit-20260303-171240-postfix-invalid-sourcepayload",
+        "contractVersion": "1.0.0",
+        "trackerId": "audit-20260303-171240-postfix-tracker",
+        "eventType": "heartbeat",
+        "trackerTsMs": 1772576631482,
+        "seq": 3,
+        "sourcePayload": "bad-string"
+      }
+    },
+    {
+      "case": "valid_sourcePayload_object",
+      "status": 200,
+      "body": "{\"duplicate\":false,\"ok\":true,\"rawEventId\":\"jh7bhwze6m16mqj1xx0dbcw0fd827r4c\"}",
+      "payload": {
+        "eventId": "audit-20260303-171240-postfix-valid-sourcepayload",
+        "contractVersion": "1.0.0",
+        "trackerId": "audit-20260303-171240-postfix-tracker",
+        "eventType": "heartbeat",
+        "trackerTsMs": 1772576631483,
+        "seq": 4,
+        "sourcePayload": {
+          "ok": true
+        }
+      }
+    },
+    {
+      "case": "idempotency_repeat_5",
+      "statuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "duplicate_true": 4,
+      "duplicate_false": 1
+    }
+  ]
+}

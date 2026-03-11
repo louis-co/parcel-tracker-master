@@ -1,0 +1,1139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Parcel Tracker Design System Palette</title>
+<style>
+  :root {
+    --paper: #f7f3eb;
+    --ink: #172019;
+    --muted: #627066;
+    --line: rgba(23, 32, 25, 0.1);
+    --panel: rgba(255,255,255,0.78);
+    --shadow: 0 18px 42px rgba(22, 32, 24, 0.08);
+    --accent: #486f57;
+    --warning: #b87a11;
+    --danger: #b65151;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at top left, rgba(72,111,87,0.14), transparent 22%),
+      radial-gradient(circle at top right, rgba(184,122,17,0.08), transparent 24%),
+      linear-gradient(180deg, #fcf8f0 0%, #f1eadb 100%);
+  }
+  .page {
+    width: 1360px;
+    margin: 0 auto;
+    padding: 36px 36px 50px;
+  }
+  .hero, .family-section, .support-section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+  }
+  .hero {
+    padding: 28px 30px;
+  }
+  .eyebrow {
+    margin: 0 0 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  h1 {
+    margin: 0;
+    font-size: 36px;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+  }
+  .hero-copy {
+    margin: 12px 0 0;
+    max-width: 980px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .hero-note {
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: rgba(72,111,87,0.08);
+    border: 1px solid rgba(72,111,87,0.14);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .hero-note .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+  .family-section {
+    margin-top: 18px;
+    overflow: hidden;
+  }
+  .section-head {
+    padding: 22px 24px 18px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+    gap: 18px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255,255,255,0.48), rgba(255,255,255,0.12));
+  }
+  h2 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: -0.04em;
+  }
+  .section-subtitle {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .section-description {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4d5a52;
+  }
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 20px;
+  }
+  .token-card {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.56);
+    padding: 16px;
+    min-height: 124px;
+    display: grid;
+    gap: 14px;
+  }
+  .token-card.compact {
+    min-height: 0;
+    padding: 13px 14px;
+    border-radius: 18px;
+    gap: 10px;
+  }
+  .token-name {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .token-label {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .mode-swatches {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .mode-swatches.compact {
+    gap: 8px;
+  }
+  .mode-chip {
+    display: grid;
+    grid-template-columns: 42px minmax(0,1fr);
+    gap: 10px;
+    align-items: center;
+    border-radius: 16px;
+    padding: 10px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.58);
+  }
+  .compact .mode-chip {
+    grid-template-columns: 34px minmax(0,1fr);
+    padding: 8px;
+    border-radius: 14px;
+  }
+  .swatch {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid rgba(23,32,25,0.12);
+    background-image:
+      linear-gradient(45deg, rgba(255,255,255,0.52) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(255,255,255,0.52) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.52) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.52) 75%);
+    background-size: 12px 12px;
+    background-position: 0 0, 0 6px, 6px -6px, -6px 0;
+    box-shadow: inset 0 0 0 999px var(--fill);
+  }
+  .compact .swatch {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+  .mode-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .hex {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .support-section {
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  .support-head {
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .support-head h3 {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: -0.03em;
+  }
+  .support-head p {
+    margin: 0;
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .compact-grid {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .footnote {
+    margin-top: 16px;
+    padding: 0 6px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+  @page {
+    size: A4 landscape;
+    margin: 14mm;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <p class="eyebrow">Parcel Tracker</p>
+      <h1>Color palette grouped by hue family</h1>
+      <p class="hero-copy">
+        This version is organized by actual hue family rather than by raw token category. The important part is that the system now has fewer real color families: neutrals, one accent family, one warning family, and one danger family. Supporting and less-used derived tokens are grouped separately below in a smaller section.
+      </p>
+      <div class="hero-note"><span class="dot"></span>Reduced system: 4 real color families</div>
+    </section>
+
+    
+  <section class="family-section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Hue family</p>
+        <h2>Neutral foundation</h2>
+        <p class="section-subtitle">The structural base of the interface</p>
+      </div>
+      <p class="section-description">These are the real foundation colors that carry almost all layout and readability work: canvas, panels, borders, and text.</p>
+    </div>
+    <div class="token-grid">
+      
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--tone-ink</div>
+        <div class="token-label">Deepest canvas base</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#101311"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#101311</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#F3EDE0"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#F3EDE0</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--tone-panel</div>
+        <div class="token-label">Primary panel surface</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#171B18"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#171B18</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#FFFDF8"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#FFFDF8</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--tone-line</div>
+        <div class="token-label">Borders and dividers</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#313833"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#313833</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#C8C1B3"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#C8C1B3</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--tone-text</div>
+        <div class="token-label">Primary readable text</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#DDE5DB"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#DDE5DB</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#1A241E"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#1A241E</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="family-section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Hue family</p>
+        <h2>Accent family</h2>
+        <p class="section-subtitle">Primary actions, active states, live state, info state</p>
+      </div>
+      <p class="section-description">This is now the main expressive family in the system. It covers action emphasis, selected navigation, live states, and informational states.</p>
+    </div>
+    <div class="token-grid">
+      
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--tone-accent</div>
+        <div class="token-label">Master accent hue</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#B9D8BE"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#B9D8BE</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#486F57"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#486F57</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--primary</div>
+        <div class="token-label">Primary action fill</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#B9D8BE"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#B9D8BE</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#486F57"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#486F57</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--accent</div>
+        <div class="token-label">Accent surface tint</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#374139"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#374139</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#E9ECE5"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#E9ECE5</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--status-live-fg</div>
+        <div class="token-label">Live-state text</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#C4DEC8"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#C4DEC8</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#426650"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#426650</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--status-live-bg</div>
+        <div class="token-label">Live-state fill</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#B8D5BF24"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#B8D5BF24</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#47715524"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#47715524</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--status-info-fg</div>
+        <div class="token-label">Info-state text</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#C8E1CC"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#C8E1CC</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#3F624D"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#3F624D</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--status-info-bg</div>
+        <div class="token-label">Info-state fill</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#BAD8BA1A"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#BAD8BA1A</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#496D5B1C"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#496D5B1C</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--map-accent</div>
+        <div class="token-label">Map route / selected highlight</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#B9D8BE"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#B9D8BE</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#486F57"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#486F57</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="family-section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Hue family</p>
+        <h2>Warning family</h2>
+        <p class="section-subtitle">Fallbacks, caution, alert panels</p>
+      </div>
+      <p class="section-description">Amber is now reserved for caution and fallback meaning only, which makes it much clearer in the interface.</p>
+    </div>
+    <div class="token-grid">
+      
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--tone-warning</div>
+        <div class="token-label">Master warning hue</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#F4C95D"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#F4C95D</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#B87A11"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#B87A11</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--status-warning-fg</div>
+        <div class="token-label">Warning text</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#FFF1C4"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#FFF1C4</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#6D4A00"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#6D4A00</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--status-warning-bg</div>
+        <div class="token-label">Warning fill</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#F1C65C24"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#F1C65C24</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#BB7C1329"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#BB7C1329</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--alert-panel-fg</div>
+        <div class="token-label">Alert-panel text</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#FFF0D2"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#FFF0D2</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#6E4D0F"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#6E4D0F</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--alert-panel-bg</div>
+        <div class="token-label">Alert-panel fill</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#F7C55A1F"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#F7C55A1F</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#B8780E24"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#B8780E24</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--alert-panel-border</div>
+        <div class="token-label">Alert-panel border</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#F5CA5D94"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#F5CA5D94</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#B87A116B"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#B87A116B</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="family-section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Hue family</p>
+        <h2>Danger family</h2>
+        <p class="section-subtitle">Offline, error, destructive actions</p>
+      </div>
+      <p class="section-description">Red is kept narrow and deliberate: only for errors, destructive actions, and offline states.</p>
+    </div>
+    <div class="token-grid">
+      
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--tone-danger</div>
+        <div class="token-label">Master danger hue</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#EF7A7A"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#EF7A7A</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#B65151"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#B65151</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--destructive</div>
+        <div class="token-label">Destructive action fill</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#B76161"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#B76161</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#C67776"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#C67776</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--status-error-fg</div>
+        <div class="token-label">Error text</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#FFE3E3"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#FFE3E3</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#772F2F"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#772F2F</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card ">
+      <div class="token-meta">
+        <div class="token-name">--status-error-bg</div>
+        <div class="token-label">Error fill</div>
+      </div>
+      <div class="mode-swatches ">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#EC7C7C29"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#EC7C7C29</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#B84E4E24"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#B84E4E24</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+
+    <section class="support-section">
+      <div class="support-head">
+        <div>
+          <p class="eyebrow">Supporting tokens</p>
+          <h3>Less-used / derived colors</h3>
+        </div>
+        <p>
+          These are still part of the design system, but they are not primary hue families. Most of them are supportive neutrals, gradient stops, or derived semantic surfaces.
+        </p>
+      </div>
+      <div class="compact-grid">
+        
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--shell-top</div>
+        <div class="token-label">Background gradient top</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#0D100E"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#0D100E</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#FBF7EF"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#FBF7EF</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--shell-bottom</div>
+        <div class="token-label">Background gradient bottom</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#151916"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#151916</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#EDE4D4"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#EDE4D4</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--background</div>
+        <div class="token-label">Resolved app background</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#101311"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#101311</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#F4EFE3"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#F4EFE3</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--foreground</div>
+        <div class="token-label">Resolved foreground</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#DDE5DB"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#DDE5DB</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#1A241E"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#1A241E</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--card</div>
+        <div class="token-label">Card surface</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#171B18"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#171B18</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#FFFCF7"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#FFFCF7</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--popover</div>
+        <div class="token-label">Floating surface</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#161A17"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#161A17</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#FEFCF7"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#FEFCF7</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--secondary</div>
+        <div class="token-label">Secondary surface</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#1C201D"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#1C201D</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#FCF9F1"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#FCF9F1</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--muted</div>
+        <div class="token-label">Muted surface</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#1F2420"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#1F2420</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#F9F5EC"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#F9F5EC</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--border</div>
+        <div class="token-label">Default border</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#505751"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#505751</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#D6D1C5"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#D6D1C5</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--input</div>
+        <div class="token-label">Input background</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#1A1F1C"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#1A1F1C</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#FDFBF4"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#FDFBF4</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--ring</div>
+        <div class="token-label">Focus outline</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#BAD7BE7A"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#BAD7BE7A</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#4971564D"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#4971564D</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--status-neutral-fg</div>
+        <div class="token-label">Neutral-status text</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#DCE5DBB8"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#DCE5DBB8</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#1B231DAD"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#1B231DAD</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--status-neutral-bg</div>
+        <div class="token-label">Neutral-status fill</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#1B201C"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#1B201C</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#FBF8F0"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#FBF8F0</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--map-panel</div>
+        <div class="token-label">Map shell</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#171B18"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#171B18</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#FFFFFF"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#FFFFFF</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="token-card compact">
+      <div class="token-meta">
+        <div class="token-name">--map-text</div>
+        <div class="token-label">Map text</div>
+      </div>
+      <div class="mode-swatches compact">
+        <div class="mode-chip dark-mode">
+          <div class="swatch" style="--fill:#DDE5DB"></div>
+          <div>
+            <div class="mode-label">Dark</div>
+            <div class="hex">#DDE5DB</div>
+          </div>
+        </div>
+        <div class="mode-chip light-mode">
+          <div class="swatch" style="--fill:#1A241E"></div>
+          <div>
+            <div class="mode-label">Light</div>
+            <div class="hex">#1A241E</div>
+          </div>
+        </div>
+      </div>
+    </article>
+      </div>
+    </section>
+
+    <div class="footnote">
+      The system intentionally keeps semantic names like <code>status-live</code> and <code>status-info</code>, but both now resolve from the same accent family instead of introducing extra independent hue families.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+Beacon explorer
+Beacons
+Resolve ownership, attach tracking numbers, and inspect live parcel routes with heartbeat-aware state.
+[2230]<a />
+	Open tracker dashboard
+Beacon Explorer
+Beacon id
+|SHADOW(open)|[2236]<input id=beacon-explorer-id placeholder=ble:2164195606 value=ble:audit-20260303-171240:1001 />
+Tracking number
+|SHADOW(open)|[2238]<input id=beacon-explorer-tracking placeholder=1Z999AA10123456784 />
+Soft-prior tracker
+|SHADOW(open)|[2240]<input id=beacon-explorer-prior placeholder=pi-5-gateway-01 value=audit-20260303-171240-tracker-a />
+	Open Shadow
+		|scroll element[2320]<div />
+	Shadow End
+Bias score (0..1)
+|SHADOW(open)|[2244]<input id=beacon-explorer-bias placeholder=0.35 value=0.35 />
+Note (optional)
+|SHADOW(open)|[2246]<input id=beacon-explorer-note placeholder=Loaded on truck A />
+[2252]<button />
+	Load beacon
+[2253]<button />
+	Assign tracking
+[2254]<button />
+	Clear tracking
+[2255]<button />
+	Assign prior
+[2256]<button />
+	Clear prior
+Viewing:
+ble:audit-20260303-171240:1001
+Tracking number
+Not assigned
+Current owner
+audit-20260303-171240-tracker-a
+Live parcel state
+[2265]<span />
+On truck
+Missed heartbeats
+Conflict status
+Stable
+Last seen
+Mar 3, 2026, 5:14:19 PM
+Resolver state
+ambiguous
+90
+%)
+Missing since:
+Mar 3, 2026, 5:14:19 PM
+Live location
+190.00000
+-74.00000
+Stale
+gps_fix
+• tracker
+audit-20260303-171240-tracker-a
+Loaded 0 ownership segments, 0 route sessions, and 1 map points for ble:audit-20260303-171240:1001.
+Resolved path map
+*[2396]<button />
+	Recenter
+*[1195]<div />
+	*[1196]<canvas aria-label=Map role=region />
+Route sessions •
+ble:audit-20260303-171240:1001
+sessions
+No route sessions loaded.
+Assignment timeline •
+ble:audit-20260303-171240:1001
+segments
+No ownership timeline loaded for
+ble:audit-20260303-171240:1001

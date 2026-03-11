@@ -1,0 +1,12 @@
+This site can’t be reached
+localhost
+refused to connect.
+Try:
+Checking the connection
+[3]<a />
+	Checking the proxy and the firewall
+ERR_CONNECTION_REFUSED
+[4]<button id=reload-button />
+	Reload
+[5]<button id=details-button />
+	Details
