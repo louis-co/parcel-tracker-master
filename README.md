@@ -6,6 +6,8 @@ This repository holds system-level documentation plus git submodule pointers for
 
 ## Start here
 
+- [UNIFIED_SYSTEM_WALKTHROUGH.md](UNIFIED_SYSTEM_WALKTHROUGH.md)
+  - single linear walkthrough of the whole solution from beacon bytes to dashboard UI
 - [EXPLAINER.md](EXPLAINER.md)
   - full system architecture, dataflows, runtime boundaries, storage model, and release order
 - [AGENTS.md](AGENTS.md)
@@ -79,6 +81,7 @@ git submodule update --init --recursive --remote
 
 ## System documentation
 
+- `UNIFIED_SYSTEM_WALKTHROUGH.md` - single document that explains the complete runtime flow step by step.
 - `EXPLAINER.md` - full architecture and end-to-end dataflow reference.
 - `AGENTS.md` - instructions for working in the coordination repo.
 - `repos/parcel-tracker-pi/README.md` - Pi runtime, services, env vars, and operations.
